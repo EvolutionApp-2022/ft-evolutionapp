@@ -1,6 +1,14 @@
-# ft_evolution_app
+# Flutter Evolution App 🧬
 
-A new Flutter project.
+## Description
+This repository contains the flutter aplication for the evolution project
+
+## Group-4 👨‍💻
+* Julio Alexander Salazar Zapata
+* Yordy Rolando Mochcco Atauje
+* Joaquin San Martin Alvarez
+* Italo Sammir Silva Silveira
+* Erikc Cortez Benitez
 
 ## Getting Started
 
