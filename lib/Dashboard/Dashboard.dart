@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ft_evolution_app/Courses/Courses.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -19,10 +20,6 @@ class _DashboardState extends State<Dashboard> {
             color: Colors.black,
             fontWeight: FontWeight.bold
           ),
-        ),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_rounded, color: Colors.black,),
-          onPressed: (){},
         ),
         centerTitle: true,
         actions: [
@@ -136,7 +133,12 @@ class _DashboardState extends State<Dashboard> {
                       ),
                     ),
                     IconButton(
-                        onPressed: (){},
+                        onPressed: (){
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const Courses())
+                          );
+                        },
                         icon: Icon(Icons.add_circle_outlined, color: Colors.black, size: 35,)
                     ),
                   ],
