@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ft_evolution_app/views.dart';
 
 class WelcomeView extends StatelessWidget {
   const WelcomeView({Key? key}) : super(key: key);
