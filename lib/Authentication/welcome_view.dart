@@ -76,31 +76,29 @@ class FormContent extends StatelessWidget {
           children: [
             Column(
               children: [
-                TextButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.black),
-                    padding:
-                        MaterialStateProperty.all(const EdgeInsets.symmetric(
-                      horizontal: 130,
-                    )),
+                SizedBox(
+                  width: 300,
+                  child: TextButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.black),
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'loginview');
+                    },
+                    child: const Text('LogIn'),
                   ),
-                  onPressed: () {
-                    Navigator.pushNamed(context, 'loginview');
-                  },
-                  child: const Text('LogIn'),
                 ),
-                TextButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.black),
-                    padding:
-                        MaterialStateProperty.all(const EdgeInsets.symmetric(
-                      horizontal: 129,
-                    )),
+                SizedBox(
+                  width: 300,
+                  child: TextButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.black),
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'signview');
+                    },
+                    child: const Text('SignIn'),
                   ),
-                  onPressed: () {
-                    Navigator.pushNamed(context, 'signview');
-                  },
-                  child: const Text('SignIn'),
                 ),
               ],
             ),
