@@ -85,11 +85,7 @@ class FormContent extends StatelessWidget {
                     )),
                   ),
                   onPressed: () {
-                    final route = MaterialPageRoute(
-                      builder: (context) => const LoginView(),
-                    );
-
-                    Navigator.push(context, route);
+                    Navigator.pushNamed(context, 'loginview');
                   },
                   child: const Text('LogIn'),
                 ),
@@ -102,11 +98,7 @@ class FormContent extends StatelessWidget {
                     )),
                   ),
                   onPressed: () {
-                    final route = MaterialPageRoute(
-                      builder: (context) => const SigninView(),
-                    );
-
-                    Navigator.push(context, route);
+                    Navigator.pushNamed(context, 'signview');
                   },
                   child: const Text('SignIn'),
                 ),
