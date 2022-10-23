@@ -1,0 +1,1 @@
+export 'package:ft_evolution_app/widgets/card_custom.dart';
