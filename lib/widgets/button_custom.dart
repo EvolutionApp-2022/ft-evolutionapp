@@ -17,6 +17,7 @@ class ButtonCustom extends StatelessWidget {
       child: TextButton(
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(Colors.black),
+          foregroundColor: MaterialStateProperty.all(Colors.white),
         ),
         onPressed: () {
           Navigator.pushNamed(context, pushNamed);
