@@ -20,12 +20,15 @@ class LabelSample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return Center(
       child: Column(
         children: const [
           Image(
             image: AssetImage('assets/evolution-ico.png'),
             width: double.maxFinite,
+          ),
+          SizedBox(
+            height: 120,
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),

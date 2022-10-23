@@ -13,7 +13,7 @@ class ButtonCustom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 300,
+      width: 310,
       child: TextButton(
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(Colors.black),
