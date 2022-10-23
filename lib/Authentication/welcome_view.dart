@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/widgets.dart';
 
 class WelcomeView extends StatelessWidget {
   const WelcomeView({Key? key}) : super(key: key);
@@ -74,30 +75,14 @@ class FormContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Column(
-              children: [
-                SizedBox(
-                  width: 300,
-                  child: TextButton(
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.black),
-                    ),
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'loginview');
-                    },
-                    child: const Text('LogIn'),
-                  ),
+              children: const [
+                ButtonCustom(
+                  sampleText: 'Log In',
+                  pushNamed: 'loginview',
                 ),
-                SizedBox(
-                  width: 300,
-                  child: TextButton(
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.black),
-                    ),
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'signview');
-                    },
-                    child: const Text('SignIn'),
-                  ),
+                ButtonCustom(
+                  sampleText: 'Sign In',
+                  pushNamed: 'signview',
                 ),
               ],
             ),
