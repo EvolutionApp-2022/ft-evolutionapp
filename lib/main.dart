@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Dashboard/Dashboard.dart';
+import 'package:ft_evolution_app/routes/app_routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,11 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const Dashboard(),
+      initialRoute: AppRoutes.initialRoute,
+      routes: AppRoutes.routes,
     );
   }
 }
