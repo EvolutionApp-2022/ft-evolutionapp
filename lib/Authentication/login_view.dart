@@ -46,28 +46,20 @@ class LoginView extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Column(
                     children: [
-                      TextFormField(
-                        decoration: const InputDecoration(
-                            hintText: "example@mail.com",
-                            labelText: "Email",
-                            border: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(5)),
-                            )),
-                      ),
+                      TextFormFieldCustom(
+                          var_hintText: "exameple@mail.com",
+                          var_labelText: "Email",
+                          var_keyboardType: TextInputType.emailAddress,
+                          var_obscureText: false,
+                          var_suffixIcon: Icons.mail_outline_rounded),
                       const SizedBox(
                         height: 8,
                       ),
-                      TextFormField(
-                        // keyboardType: TextInputType(),
-                        decoration: const InputDecoration(
-                            hintText: "*********",
-                            labelText: "Password",
-                            border: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(5)),
-                            )),
-                      ),
+                      TextFormFieldCustom(
+                          var_hintText: "*********",
+                          var_labelText: "Password",
+                          var_obscureText: true,
+                          var_suffixIcon: Icons.password_outlined),
                       const SizedBox(
                         height: 10,
                       ),
