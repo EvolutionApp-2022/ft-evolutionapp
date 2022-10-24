@@ -22,13 +22,11 @@ class LabelSample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: const [
           Image(
             image: AssetImage('assets/img/evolution-ico.png'),
             width: double.maxFinite,
-          ),
-          SizedBox(
-            height: 120,
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
