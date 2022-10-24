@@ -79,11 +79,11 @@ class FormContent extends StatelessWidget {
               children: const [
                 ButtonCustom(
                   sampleText: 'Log In',
-                  pushNamed: 'loginview',
+                  pushNamed: 'login_view',
                 ),
                 ButtonCustom(
                   sampleText: 'Sign In',
-                  pushNamed: 'signview',
+                  pushNamed: 'sign_view',
                 ),
               ],
             ),
