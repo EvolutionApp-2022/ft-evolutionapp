@@ -6,3 +6,5 @@ export 'package:ft_evolution_app/Authentication/login_view.dart';
 export 'package:ft_evolution_app/Authentication/sigin_view.dart';
 export 'package:ft_evolution_app/Announcement/announcement_view.dart';
 export 'package:ft_evolution_app/Announcement/post_view.dart';
+export 'package:ft_evolution_app/Item/itemTeacher_view.dart';
+export 'package:ft_evolution_app/Item/itemTeacherPost_view.dart';
