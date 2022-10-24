@@ -1,5 +1,8 @@
-export 'package:ft_evolution_app/courses/courses_view.dart';
 export 'package:ft_evolution_app/Dashboard/dashboard_view.dart';
+export 'package:ft_evolution_app/Courses/couse_detail_view.dart';
+export 'package:ft_evolution_app/Courses/courses_view.dart';
+export 'package:ft_evolution_app/Section/create_section.dart';
+export 'package:ft_evolution_app/Section/section_detail_view.dart';
 export 'package:ft_evolution_app/Profile/profile_view.dart';
 export 'package:ft_evolution_app/Authentication/welcome_view.dart';
 export 'package:ft_evolution_app/Authentication/login_view.dart';
