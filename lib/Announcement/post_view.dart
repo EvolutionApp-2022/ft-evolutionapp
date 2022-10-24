@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ft_evolution_app/widgets/widgets.dart';
 
 class PostView extends StatefulWidget {
   const PostView({Key? key}) : super(key: key);
@@ -75,16 +76,9 @@ class _PostViewState extends State<PostView> {
               ),
             ),
 
-            SizedBox(height: 150,),
+            SizedBox(height: 30,),
 
-            ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    primary: Colors.black,
-                    textStyle: TextStyle(fontSize: 20)
-                ),
-                onPressed: (){},
-                child: Text("Post Announcement",)
-            ),
+            ButtonCustom(sampleText: "Post Announcement", pushNamed: '')
 
           ],
         ),
