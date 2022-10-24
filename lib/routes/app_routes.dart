@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ft_evolution_app/views.dart';
 
 class AppRoutes {
-  static const initialRoute = "announcement_view";
+  static const initialRoute = "welcome_view";
 
   static Map<String, Widget Function(BuildContext)> routes = {
     'profile_view': (BuildContext context) => const ProfileView(),
