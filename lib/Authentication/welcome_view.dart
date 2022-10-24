@@ -85,7 +85,7 @@ class FormContent extends StatelessWidget {
                 ),
                 ButtonCustom(
                   sampleText: 'Sign In',
-                  pushNamed: 'signview',
+                  pushNamed: 'dashboardStudent_view',
                 ),
               ],
             ),
