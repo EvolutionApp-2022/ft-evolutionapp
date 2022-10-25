@@ -10,5 +10,5 @@ export 'package:ft_evolution_app/Dashboard/dashboardStudent_view.dart';
 export 'package:ft_evolution_app/Courses/coursesStudent_view.dart';
 export 'package:ft_evolution_app/Items/itemsStudent_view.dart';
 export 'package:ft_evolution_app/Profile/profileStundet_view.dart';
-export 'package:ft_evolution_app/Items/itemStudentDocument_view.dart';
-export 'package:ft_evolution_app/Items/itemStudentVideo_view.dart';
+export 'package:ft_evolution_app/Items/itemStudentDocumentDetail_view.dart';
+export 'package:ft_evolution_app/Items/itemStudentVideoDetail_view.dart';

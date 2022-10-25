@@ -160,7 +160,7 @@ class ItemStudentView extends StatelessWidget {
                           ),
                           IconButton(
                               onPressed: () {
-                                Navigator.pushNamed(context, 'itemStudentDocument_view');
+                                Navigator.pushNamed(context, 'itemStudentDocumentDetail_view');
                               },
                               icon: Icon(Icons.remove_red_eye, color: Colors.black, size: 35,)
                           )
@@ -299,7 +299,7 @@ class ItemStudentView extends StatelessWidget {
                           ),
                           IconButton(
                               onPressed: () {
-                                Navigator.pushNamed(context, 'itemStudentVideo_view');
+                                Navigator.pushNamed(context, 'itemStudentVideoDetail_view');
                               },
                               icon: Icon(Icons.remove_red_eye, color: Colors.black, size: 35,)
                           )

@@ -17,7 +17,7 @@ class AppRoutes {
     'coursesStudent_view': (BuildContext context) => const CourseStudentView(),
     'itemsStudent_view': (BuildContext context) => const ItemStudentView(),
     'profileStudent_view': (BuildContext context) => const ProfileStudentView(),
-    'itemStudentDocument_view': (BuildContext context) => const ItemStudentDocumentView(),
-    'itemStudentVideo_view': (BuildContext context) => const ItemStudentVideoView(),
+    'itemStudentDocumentDetail_view': (BuildContext context) => const ItemStudentDocumentDetailView(),
+    'itemStudentVideoDetail_view': (BuildContext context) => const ItemStudentVideoDetailView()
   };
 }
