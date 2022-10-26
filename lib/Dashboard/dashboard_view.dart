@@ -82,8 +82,10 @@ class _DashboardViewState extends State<DashboardView> {
               ),
               ButtonColorCustom(
                   customText: 'customText',
-                  customColor1: Color.fromARGB(255, 217, 255, 0),
-                  customColor2: Color.fromARGB(255, 0, 241, 108),
+                  customColor1: Color.fromARGB(255, 255, 0, 0),
+                  customColor2: Color.fromARGB(255, 25, 0, 255),
+                  addIcon: true,
+                  customIcon: Icons.add_circle,
                   pushNamed: 'home_view'),
               SizedBox(
                 height: 5,
