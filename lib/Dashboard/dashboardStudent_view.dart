@@ -86,7 +86,7 @@ class _DashboardStudentView extends State<DashboardStudentView> {
                 customText: 'View all courses',
                 customColor1: Color.fromARGB(255, 255, 81, 0),
                 customColor2: Color.fromARGB(255, 236, 183, 10),
-                pushNamed: 'login_view',
+                pushNamed: 'coursesStudent_view',
                 addIcon: true,
                 customIcon: Icons.arrow_circle_right_sharp),
             SizedBox(
@@ -104,8 +104,8 @@ class _DashboardStudentView extends State<DashboardStudentView> {
               height: 15,
             ),
             CardButtonCustom(
-              customColor1: Color.fromARGB(255, 207, 0, 69),
-              customColor2: Color.fromARGB(255, 151, 0, 221),
+              customColor1: Color.fromARGB(255, 25, 0, 255),
+              customColor2: Color.fromARGB(255, 0, 185, 241),
               customIcon: Icons.remove_red_eye,
               pushNamed: 'itemsStudent_view',
               textContent:
@@ -116,8 +116,8 @@ class _DashboardStudentView extends State<DashboardStudentView> {
               height: 15,
             ),
             CardButtonCustom(
-              customColor1: Color.fromARGB(255, 207, 0, 69),
-              customColor2: Color.fromARGB(255, 151, 0, 221),
+              customColor1: Color.fromARGB(255, 25, 0, 255),
+              customColor2: Color.fromARGB(255, 0, 185, 241),
               customIcon: Icons.remove_red_eye,
               pushNamed: 'itemsStudent_view',
               textContent:

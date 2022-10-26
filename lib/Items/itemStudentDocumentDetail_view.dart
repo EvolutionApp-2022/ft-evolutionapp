@@ -30,7 +30,9 @@ class _ItemStudentDocumentDetailViewState extends State<ItemStudentDocumentDetai
         centerTitle: true,
         actions: [
           IconButton(
-              onPressed: (){},
+              onPressed: (){
+                Navigator.pushNamed(context, 'profileStudent_view');
+              },
               icon: Icon(Icons.person, color: Colors.black,)
           )
         ],
