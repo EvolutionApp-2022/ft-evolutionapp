@@ -3,7 +3,7 @@
 ## Description
 This repository contains the flutter aplication for the evolution project
 
-## Group-4 👨‍💻
+## Group 4 👨‍💻
 * Julio Alexander Salazar Zapata
 * Yordy Rolando Mochcco Atauje
 * Joaquin San Martin Alvarez
@@ -22,3 +22,10 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Recommendations
+Execute the following command
+```Pub get```
+
+## Versions
+* version 1.0.0 - 25/09/2022
