@@ -78,7 +78,7 @@ class SigninView extends StatelessWidget {
                         height: 10,
                       ),
                       const ButtonCustom(
-                          sampleText: 'Log In', pushNamed: 'signview'),
+                          sampleText: 'Continue', pushNamed: 'user_view'),
                     ],
                   )),
             ],

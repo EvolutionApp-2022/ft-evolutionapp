@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ft_evolution_app/widgets/widgets.dart';
 
-class LoginView extends StatelessWidget {
-  const LoginView({Key? key}) : super(key: key);
+class UserView extends StatelessWidget {
+  const UserView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class LoginView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'Log In',
+                'Final step',
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 40,
@@ -30,7 +30,7 @@ class LoginView extends StatelessWidget {
                 height: 20,
               ),
               const Text(
-                'Hello again!',
+                'Select type user!',
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 20,
@@ -40,31 +40,32 @@ class LoginView extends StatelessWidget {
               const Padding(
                 padding: EdgeInsets.symmetric(vertical: 10),
                 child: Text(
-                    "Enter the credentials with which you created your account at the beginning and enjoy the features of the application."),
+                    "Our application is for two types of users, we offer different features for each one. Identify yourself, select and enjoy as soon as possible."),
               ),
               Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Column(
                     children: [
-                      TextFormFieldCustom(
-                          var_hintText: "exameple@mail.com",
-                          var_labelText: "Email",
-                          var_keyboardType: TextInputType.emailAddress,
-                          var_obscureText: false,
-                          var_suffixIcon: Icons.mail_outline_rounded),
+                      ButtonColorCustom(
+                        customColor1: Color.fromARGB(255, 25, 0, 255),
+                        customColor2: Color.fromARGB(255, 0, 195, 255),
+                        customText: 'TEACHER',
+                        pushNamed: 'home_view',
+                      ),
                       const SizedBox(
                         height: 8,
                       ),
-                      TextFormFieldCustom(
-                          var_hintText: "*********",
-                          var_labelText: "Password",
-                          var_obscureText: true,
-                          var_suffixIcon: Icons.password_outlined),
+                      ButtonColorCustom(
+                        customColor1: Color.fromARGB(255, 156, 0, 34),
+                        customColor2: Color.fromARGB(255, 153, 0, 255),
+                        customText: 'STUDENT',
+                        pushNamed: 'home_view',
+                      ),
                       const SizedBox(
                         height: 10,
                       ),
                       const ButtonCustom(
-                          sampleText: 'Log In', pushNamed: 'sign_view'),
+                          sampleText: 'Join', pushNamed: 'sign_view'),
                     ],
                   )),
             ],
