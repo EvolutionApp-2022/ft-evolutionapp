@@ -81,22 +81,25 @@ class _DashboardViewState extends State<DashboardView> {
                 ),
               ),
               ButtonColorCustom(
-                  customText: 'customText',
-                  customColor1: Color.fromARGB(255, 255, 0, 0),
-                  customColor2: Color.fromARGB(255, 25, 0, 255),
+                  customText: 'Create new sesion',
+                  customColor1: Color.fromRGBO(242, 101, 5, 1.0),
+                  customColor2: Color.fromRGBO(242, 177, 5, 1.0),
                   addIcon: true,
                   customIcon: Icons.add_circle,
                   pushNamed: 'home_view'),
               SizedBox(
                 height: 5,
               ),
-              ButtonCustomOrange(
-                  sampleText: 'Create new sesion', pushNamed: 'home_view'),
+              ButtonColorCustom(
+                  customText: 'View courses',
+                  customColor1: Color.fromRGBO(242, 101, 5, 1.0),
+                  customColor2: Color.fromRGBO(242, 177, 5, 1.0),
+                  addIcon: true,
+                  customIcon: Icons.add_circle,
+                  pushNamed: 'home_view'),
               SizedBox(
-                height: 8,
+                height: 5,
               ),
-              ButtonCustomOrange(
-                  sampleText: 'View courses', pushNamed: 'home_view'),
               const Padding(
                 padding: EdgeInsets.all(20.0),
                 child: Text(
