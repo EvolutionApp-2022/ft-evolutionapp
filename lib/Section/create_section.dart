@@ -42,7 +42,7 @@ class _CreateSectionViewState extends State<CreateSectionView> {
           centerTitle: true,
           actions: [
             IconButton(
-                onPressed: () {},
+                onPressed: () {Navigator.pushNamed(context, 'profile_view');},
                 icon: const Icon(
                   Icons.person,
                   color: Colors.black,

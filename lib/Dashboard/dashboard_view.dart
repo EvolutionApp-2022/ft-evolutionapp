@@ -81,12 +81,12 @@ class _DashboardViewState extends State<DashboardView> {
                 ),
               ),
               ButtonColorCustom(
-                  customText: 'Create new sesion',
+                  customText: 'Create new section',
                   customColor1: Color.fromRGBO(242, 101, 5, 1.0),
                   customColor2: Color.fromRGBO(242, 177, 5, 1.0),
                   addIcon: true,
                   customIcon: Icons.add_circle,
-                  pushNamed: 'home_view'),
+                  pushNamed: 'create_section_view'),
               SizedBox(
                 height: 5,
               ),
@@ -96,7 +96,7 @@ class _DashboardViewState extends State<DashboardView> {
                   customColor2: Color.fromRGBO(242, 177, 5, 1.0),
                   addIcon: true,
                   customIcon: Icons.add_circle,
-                  pushNamed: 'home_view'),
+                  pushNamed: 'courses_view'),
               SizedBox(
                 height: 5,
               ),

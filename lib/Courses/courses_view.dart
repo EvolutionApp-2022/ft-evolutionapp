@@ -30,7 +30,9 @@ class _CoursesViewState extends State<CoursesView> {
         centerTitle: true,
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, 'profile_view');
+              },
               icon: const Icon(
                 Icons.person,
                 color: Colors.black,
@@ -107,7 +109,9 @@ class _CoursesViewState extends State<CoursesView> {
                         ),
                       ),
                       IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, 'course_detail_view');
+                          },
                           icon: const Icon(
                             Icons.arrow_circle_right,
                             color: Colors.black,

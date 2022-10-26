@@ -41,7 +41,6 @@ class ButtonColorCustom extends StatelessWidget {
         ),
         onPressed: () {
           Navigator.pushNamed(context, pushNamed);
-          Navigator.pushNamed(context, pushNamed);
         },
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8),
