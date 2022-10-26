@@ -28,4 +28,5 @@ Execute the following command
 ```Pub get```
 
 ## Versions
-* version 1.0.0 - 25/09/2022
+* version 1.0.0 - 25/10/2022
+* version 1.0.1 - 26/10/2022
