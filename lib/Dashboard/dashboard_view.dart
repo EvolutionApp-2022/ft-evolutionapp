@@ -8,7 +8,23 @@ class DashboardView extends StatefulWidget {
   State<DashboardView> createState() => _DashboardViewState();
 }
 
+abstract class ListItem {}
+
+class SampleItem implements ListItem {
+  final String header;
+  final String body;
+
+  SampleItem(this.header, this.body);
+}
+
 class _DashboardViewState extends State<DashboardView> {
+  final courses = <SampleItem>[
+    SampleItem("ALGEBRA",
+        "Ipsum commodo minim non amet nisi occaecat quis magna deserunt eu irure reprehenderit."),
+    SampleItem("COMUNICACION",
+        "Ipsum commodo minim non amet nisi occaecat quis magna deserunt eu irure reprehenderit."),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +50,7 @@ class _DashboardViewState extends State<DashboardView> {
       body: Center(
         child: Container(
           padding: const EdgeInsets.all(25.0),
-          child: Column(
+          child: Column (
             //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               const Padding(
@@ -111,7 +127,7 @@ class _DashboardViewState extends State<DashboardView> {
               Container(
                 height: 65,
                 margin: const EdgeInsets.only(
-                    bottom: 10,
+
                     //top: 10,
                     left: 20,
                     right: 20),
@@ -154,7 +170,7 @@ class _DashboardViewState extends State<DashboardView> {
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(20.0),
                 child: Text(
                   'Courses',
                   style: TextStyle(
@@ -163,7 +179,14 @@ class _DashboardViewState extends State<DashboardView> {
                       fontSize: 20),
                 ),
               ),
-              const Expanded(child: CardCustom()),
+              const Expanded(
+                child: CardCustom(
+                  title: "ALGEBRA",
+                  textContent:
+                      "Incididunt ut cillum dolore cupidatat aliquip non nisi ad.",
+                  navigationPath: 'course_detail_view',
+                ),
+              ),
             ],
           ),
         ),
