@@ -11,9 +11,9 @@ class CardCustom extends StatelessWidget {
       required this.textContent,
       this.navigationPath,
       this.color = const [
-                       Color.fromRGBO(7, 53, 249, 2),
-                       Color.fromRGBO(6, 174, 234, 2)
-                    ],
+        Color.fromRGBO(7, 53, 249, 2),
+        Color.fromRGBO(6, 174, 234, 2)
+      ],
       Key? key})
       : super(key: key);
 
@@ -30,7 +30,7 @@ class CardCustom extends StatelessWidget {
         children: [
           Container(
             padding: const EdgeInsets.all(13),
-            decoration:  BoxDecoration(
+            decoration: BoxDecoration(
                 gradient: LinearGradient(
                     begin: Alignment.bottomLeft,
                     end: Alignment.bottomRight,

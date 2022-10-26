@@ -7,49 +7,46 @@ class ProfileStudentView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        title: Text('Evolution',
-          style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold
-          ),
+        title: Text(
+          'Evolution',
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_rounded, color: Colors.black,),
-          onPressed: (){
+          icon: Icon(
+            Icons.arrow_back_rounded,
+            color: Colors.black,
+          ),
+          onPressed: () {
             Navigator.pop(context);
           },
         ),
         centerTitle: true,
         actions: [
           IconButton(
-              onPressed: (){},
-              icon: Icon(Icons.person, color: Colors.black,)
-          )
+              onPressed: () {},
+              icon: Icon(
+                Icons.person,
+                color: Colors.black,
+              ))
         ],
       ),
-
-      body:
-      Center(
+      body: Center(
         child: Container(
           padding: const EdgeInsets.all(25.0),
           child: Column(
             children: [
-
               Container(
                 child: Image(
                   image: AssetImage('assets/img/profile_f.png'),
                   width: 250,
                 ),
               ),
-
               SizedBox(
                 height: 15,
               ),
-
               RichText(
                 text: TextSpan(
                   children: <TextSpan>[
@@ -74,23 +71,15 @@ class ProfileStudentView extends StatelessWidget {
                         children: [
                           Expanded(
                             //TODO: Modificar la info
-                            child: Text('Name: ' + 'Name of the student',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.black
-                              ),
+                            child: Text(
+                              'Name: ' + 'Name of the student',
+                              style:
+                                  TextStyle(fontSize: 18, color: Colors.black),
                             ),
                           ),
                           Expanded(
-                            child: Text('Last Name: ' + 'Last name of the student',
-                              style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: Text('Email: ' + 'Email of the student',
+                            child: Text(
+                              'Last Name: ' + 'Last name of the student',
                               style: TextStyle(
                                 fontSize: 18,
                                 color: Colors.black,
@@ -98,7 +87,17 @@ class ProfileStudentView extends StatelessWidget {
                             ),
                           ),
                           Expanded(
-                            child: Text('School: ' + 'School where Raaaa',
+                            child: Text(
+                              'Email: ' + 'Email of the student',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Text(
+                              'School: ' + 'School where Raaaa',
                               style: TextStyle(
                                 fontSize: 18,
                                 color: Colors.black,
@@ -111,7 +110,6 @@ class ProfileStudentView extends StatelessWidget {
                   ],
                 ),
               ),
-
               Padding(
                 padding: const EdgeInsets.all(0.0),
                 child: RichText(
@@ -129,7 +127,6 @@ class ProfileStudentView extends StatelessWidget {
                   ),
                 ),
               ),
-
               Padding(
                 padding: const EdgeInsets.all(0.0),
                 child: RichText(
@@ -147,7 +144,6 @@ class ProfileStudentView extends StatelessWidget {
                   ),
                 ),
               ),
-
               SizedBox(
                 height: 20,
               ),
@@ -201,7 +197,7 @@ class ProfileStudentView extends StatelessWidget {
                     children: const [
                       ButtonCustom(
                         sampleText: 'Log Out',
-                        pushNamed: 'welcomeview',
+                        pushNamed: 'login_view',
                       ),
                     ],
                   ),
@@ -211,7 +207,6 @@ class ProfileStudentView extends StatelessWidget {
           ),
         ),
       ),
-
     );
   }
 }

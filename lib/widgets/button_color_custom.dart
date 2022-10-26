@@ -5,6 +5,7 @@ class ButtonColorCustom extends StatelessWidget {
   final String pushNamed;
   final Color customColor1;
   final Color customColor2;
+  final double? customHigh;
 
   const ButtonColorCustom({
     Key? key,
@@ -12,12 +13,14 @@ class ButtonColorCustom extends StatelessWidget {
     required this.customColor1,
     required this.customColor2,
     required this.pushNamed,
+    this.customHigh,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.maxFinite,
+      height: customHigh,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
         gradient: LinearGradient(
@@ -33,6 +36,7 @@ class ButtonColorCustom extends StatelessWidget {
           foregroundColor: MaterialStateProperty.all(Colors.white),
         ),
         onPressed: () {
+          Navigator.pushNamed(context, pushNamed);
           Navigator.pushNamed(context, pushNamed);
         },
         child: Text(

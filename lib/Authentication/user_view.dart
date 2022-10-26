@@ -48,9 +48,10 @@ class UserView extends StatelessWidget {
                     children: [
                       ButtonColorCustom(
                         customColor1: Color.fromARGB(255, 25, 0, 255),
-                        customColor2: Color.fromARGB(255, 0, 195, 255),
+                        customColor2: Color.fromARGB(255, 0, 185, 241),
                         customText: 'TEACHER',
-                        pushNamed: 'home_view',
+                        pushNamed: 'dashboard_view',
+                        customHigh: 100,
                       ),
                       const SizedBox(
                         height: 8,
@@ -59,13 +60,14 @@ class UserView extends StatelessWidget {
                         customColor1: Color.fromARGB(255, 156, 0, 34),
                         customColor2: Color.fromARGB(255, 153, 0, 255),
                         customText: 'STUDENT',
-                        pushNamed: 'home_view',
+                        pushNamed: 'dashboardStudent_view',
+                        customHigh: 100,
                       ),
                       const SizedBox(
                         height: 10,
                       ),
-                      const ButtonCustom(
-                          sampleText: 'Join', pushNamed: 'sign_view'),
+                      // const ButtonCustom(
+                      //     sampleText: 'Join', pushNamed: 'sign_view'),
                     ],
                   )),
             ],

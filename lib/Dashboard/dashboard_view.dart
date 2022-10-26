@@ -39,7 +39,7 @@ class _DashboardViewState extends State<DashboardView> {
         actions: [
           IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, 'pushNamed');
+                Navigator.pushNamed(context, 'profile_view');
               },
               icon: const Icon(
                 Icons.person,
@@ -50,7 +50,7 @@ class _DashboardViewState extends State<DashboardView> {
       body: Center(
         child: Container(
           padding: const EdgeInsets.all(25.0),
-          child: Column (
+          child: Column(
             //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               const Padding(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ft_evolution_app/widgets/widgets.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({Key? key}) : super(key: key);
@@ -95,14 +96,7 @@ class _ProfileViewState extends State<ProfileView> {
               ),
             ],
           ),
-          TextButton(
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.black)),
-              onPressed: () {},
-              child: const Text(
-                'Log out',
-                style: TextStyle(fontSize: 20, color: Colors.white),
-              ))
+          ButtonCustom(sampleText: 'Log out', pushNamed: 'home_view')
         ],
       ),
     );
