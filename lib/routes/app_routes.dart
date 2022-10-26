@@ -13,8 +13,6 @@ class AppRoutes {
     'login_view': (BuildContext context) => const LoginView(),
     'announcement_view': (BuildContext context) => const AnnouncementView(),
     'post_view': (BuildContext context) => const PostView(),
-    'signview': (BuildContext context) => const SigninView(),
-    'loginview': (BuildContext context) => const LoginView(),
     'dashboardStudent_view': (BuildContext context) =>
         const DashboardStudentView(),
     'coursesStudent_view': (BuildContext context) => const CourseStudentView(),
@@ -23,6 +21,9 @@ class AppRoutes {
     'itemStudentDocumentDetail_view': (BuildContext context) =>
         const ItemStudentDocumentDetailView(),
     'itemStudentVideoDetail_view': (BuildContext context) =>
-        const ItemStudentVideoDetailView()
+        const ItemStudentVideoDetailView(),
+    'itemTeacher_view': (BuildContext context) => const ItemTeacherView(),
+    'itemTeacherPost_view': (BuildContext context) =>
+        const ItemTeacherPostView(),
   };
 }

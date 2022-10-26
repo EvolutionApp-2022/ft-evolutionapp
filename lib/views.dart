@@ -12,3 +12,5 @@ export 'package:ft_evolution_app/Items/itemsStudent_view.dart';
 export 'package:ft_evolution_app/Profile/profileStundet_view.dart';
 export 'package:ft_evolution_app/Items/itemStudentDocumentDetail_view.dart';
 export 'package:ft_evolution_app/Items/itemStudentVideoDetail_view.dart';
+export 'package:ft_evolution_app/Item/itemTeacher_view.dart';
+export 'package:ft_evolution_app/Item/itemTeacherPost_view.dart';
