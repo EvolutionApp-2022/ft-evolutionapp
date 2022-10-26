@@ -32,7 +32,7 @@ class _CourseDetailViewState extends State<CourseDetailView> {
         centerTitle: true,
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {Navigator.pushNamed(context, 'profile_view');},
               icon: const Icon(
                 Icons.person,
                 color: Colors.black,
