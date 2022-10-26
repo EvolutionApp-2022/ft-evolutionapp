@@ -11,7 +11,7 @@ class SigninView extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         const SizedBox(
-          height: 10,
+          height: 1,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),

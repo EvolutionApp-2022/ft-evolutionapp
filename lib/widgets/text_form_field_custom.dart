@@ -22,6 +22,7 @@ class TextFormFieldCustom extends StatelessWidget {
       obscureText: var_obscureText,
       keyboardType: var_keyboardType,
       decoration: InputDecoration(
+          isDense: true,
           hintText: var_hintText,
           labelText: var_labelText,
           border: OutlineInputBorder(
