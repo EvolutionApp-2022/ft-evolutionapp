@@ -22,7 +22,7 @@ class CardButtonCustom extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(0),
-      height: 108,
+      height: 115,
       decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
@@ -43,7 +43,7 @@ class CardButtonCustom extends StatelessWidget {
                 padding: const EdgeInsets.all(0),
                 child: Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                   child: Text(
                     textHeader,
                     style: TextStyle(
@@ -53,7 +53,7 @@ class CardButtonCustom extends StatelessWidget {
                   ),
                 ),
                 width: double.maxFinite,
-                height: 40,
+                height: 45,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(4),

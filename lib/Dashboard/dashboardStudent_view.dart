@@ -22,12 +22,6 @@ class _DashboardStudentView extends State<DashboardStudentView> {
           'Evolution',
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
-        /*leading: IconButton(
-          icon: Icon(Icons.arrow_back_rounded, color: Colors.black,),
-          onPressed: (){
-            Navigator.pop(context);
-          },
-        ),*/
         centerTitle: true,
         actions: [
           IconButton(
@@ -43,7 +37,7 @@ class _DashboardStudentView extends State<DashboardStudentView> {
 
       //Contenido
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(25.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,7 +69,28 @@ class _DashboardStudentView extends State<DashboardStudentView> {
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 15,
+            ),
+            Text(
+              'Action',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Montserrat'),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            ButtonColorCustom(
+                customText: 'View all courses',
+                customColor1: Color.fromARGB(255, 255, 81, 0),
+                customColor2: Color.fromARGB(255, 236, 183, 10),
+                pushNamed: 'login_view',
+                addIcon: true,
+                customIcon: Icons.arrow_circle_right_sharp),
+            SizedBox(
+              height: 15,
             ),
             Text(
               'Courses',
@@ -86,339 +101,29 @@ class _DashboardStudentView extends State<DashboardStudentView> {
                   fontFamily: 'Montserrat'),
             ),
             SizedBox(
-              height: 10,
+              height: 15,
             ),
             CardButtonCustom(
               customColor1: Color.fromARGB(255, 207, 0, 69),
               customColor2: Color.fromARGB(255, 151, 0, 221),
-              customIcon: Icons.ac_unit,
+              customIcon: Icons.remove_red_eye,
               pushNamed: 'itemsStudent_view',
-              textContent: 'sample content',
-              textHeader: 'TRIGONOMETRIA',
+              textContent:
+                  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys.',
+              textHeader: 'ALGEBRA',
             ),
             SizedBox(
-              height: 10,
+              height: 15,
             ),
             CardButtonCustom(
               customColor1: Color.fromARGB(255, 207, 0, 69),
               customColor2: Color.fromARGB(255, 151, 0, 221),
-              customIcon: Icons.ac_unit,
+              customIcon: Icons.remove_red_eye,
               pushNamed: 'itemsStudent_view',
-              textContent: 'sample content',
-              textHeader: 'TRIGONOMETRIA',
+              textContent:
+                  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys.',
+              textHeader: 'ARITMETICA',
             ),
-            SizedBox(
-              height: 10,
-            ),
-            CardButtonCustom(
-              customColor1: Color.fromARGB(255, 207, 0, 69),
-              customColor2: Color.fromARGB(255, 151, 0, 221),
-              customIcon: Icons.ac_unit,
-              pushNamed: 'itemsStudent_view',
-              textContent: 'sample content',
-              textHeader: 'TRIGONOMETRIA',
-            ),
-
-            // Container(
-            //   height: 60,
-            //   margin: EdgeInsets.only(
-            //       //bottom: 10,
-            //       //top: 10,
-            //       ),
-            //   padding: EdgeInsets.only(
-            //     left: 20,
-            //     right: 20,
-            //     bottom: 20,
-            //     top: 20,
-            //   ),
-            //   child: Center(
-            //     child: Text(
-            //       'ALGEBRA',
-            //       style: TextStyle(
-            //           fontSize: 20,
-            //           fontWeight: FontWeight.bold,
-            //           color: Colors.white),
-            //     ),
-            //   ),
-            //   decoration: BoxDecoration(
-            //       gradient: LinearGradient(
-            //           begin: Alignment.bottomLeft,
-            //           end: Alignment.bottomRight,
-            //           colors: [
-            //             Color.fromRGBO(7, 53, 249, 2),
-            //             Color.fromRGBO(6, 174, 234, 2)
-            //           ]),
-            //       borderRadius: BorderRadius.only(
-            //           topLeft: Radius.circular(15),
-            //           topRight: Radius.circular(15))),
-            // ),
-
-            // //TODO:Esto puede ser un widget
-            // Container(
-            //   height: 90,
-            //   margin: EdgeInsets.only(
-            //     bottom: 10,
-            //     //top: 10,
-            //   ),
-            //   padding: EdgeInsets.only(
-            //     left: 20,
-            //     right: 20,
-            //     bottom: 20,
-            //     top: 20,
-            //   ),
-            //   child: Row(
-            //     children: [
-            //       Container(
-            //         height: 90,
-            //         child: Column(
-            //           children: [
-            //             Expanded(
-            //               //TODO: Modificar la info
-            //               child: Text(
-            //                 'INFO',
-            //                 style:
-            //                     TextStyle(fontSize: 15, color: Colors.black),
-            //               ),
-            //             ),
-            //             Expanded(
-            //               child: Text(
-            //                 'Teacher: ',
-            //                 style: TextStyle(
-            //                   fontSize: 10,
-            //                   color: Colors.black,
-            //                 ),
-            //               ),
-            //             ),
-            //             Expanded(
-            //               child: Text(
-            //                 'Section: ',
-            //                 style: TextStyle(
-            //                   fontSize: 10,
-            //                   color: Colors.black,
-            //                 ),
-            //               ),
-            //             )
-            //           ],
-            //         ),
-            //       ),
-            //       //TODO: Esto tiene que ser un widget
-            //       IconButton(
-            //           onPressed: () {
-            //             Navigator.pushNamed(context, 'itemsStudent_view');
-            //           },
-            //           icon: Icon(
-            //             Icons.arrow_circle_right,
-            //             color: Colors.black,
-            //             size: 35,
-            //           ))
-            //     ],
-            //   ),
-            //   decoration: BoxDecoration(
-            //       borderRadius: BorderRadius.only(
-            //           bottomLeft: Radius.circular(15),
-            //           bottomRight: Radius.circular(15)),
-            //       border: Border.all(color: Colors.black)),
-            // ),
-
-            // Container(
-            //   height: 60,
-            //   margin: EdgeInsets.only(
-            //       //bottom: 10,
-            //       //top: 10,
-            //       ),
-            //   padding: EdgeInsets.only(
-            //     left: 20,
-            //     right: 20,
-            //     bottom: 20,
-            //     top: 20,
-            //   ),
-            //   child: Center(
-            //     child: Text(
-            //       'GEOMETRIA',
-            //       style: TextStyle(
-            //           fontSize: 20,
-            //           fontWeight: FontWeight.bold,
-            //           color: Colors.white),
-            //     ),
-            //   ),
-            //   decoration: BoxDecoration(
-            //       gradient: LinearGradient(
-            //           begin: Alignment.bottomLeft,
-            //           end: Alignment.bottomRight,
-            //           colors: [
-            //             Color.fromRGBO(7, 53, 249, 2),
-            //             Color.fromRGBO(6, 174, 234, 2)
-            //           ]),
-            //       borderRadius: BorderRadius.only(
-            //           topLeft: Radius.circular(15),
-            //           topRight: Radius.circular(15))),
-            // ),
-            // //TODO:Esto puede ser un widget
-            // Container(
-            //   height: 90,
-            //   margin: EdgeInsets.only(
-            //     bottom: 10,
-            //     //top: 10,
-            //   ),
-            //   padding: EdgeInsets.only(
-            //     left: 20,
-            //     right: 20,
-            //     bottom: 20,
-            //     top: 20,
-            //   ),
-            //   child: Row(
-            //     children: [
-            //       Container(
-            //         height: 90,
-            //         child: Column(
-            //           children: [
-            //             Expanded(
-            //               //TODO: Modificar la info
-            //               child: Text(
-            //                 'INFO',
-            //                 style:
-            //                     TextStyle(fontSize: 15, color: Colors.black),
-            //               ),
-            //             ),
-            //             Expanded(
-            //               child: Text(
-            //                 'Teacher: ',
-            //                 style: TextStyle(
-            //                   fontSize: 10,
-            //                   color: Colors.black,
-            //                 ),
-            //               ),
-            //             ),
-            //             Expanded(
-            //               child: Text(
-            //                 'Section: ',
-            //                 style: TextStyle(
-            //                   fontSize: 10,
-            //                   color: Colors.black,
-            //                 ),
-            //               ),
-            //             )
-            //           ],
-            //         ),
-            //       ),
-            //       //TODO: Esto tiene que ser un widget
-            //       IconButton(
-            //           onPressed: () {
-            //             Navigator.pushNamed(context, 'itemsStudent_view');
-            //           },
-            //           icon: Icon(
-            //             Icons.arrow_circle_right,
-            //             color: Colors.black,
-            //             size: 35,
-            //           ))
-            //     ],
-            //   ),
-            //   decoration: BoxDecoration(
-            //       borderRadius: BorderRadius.only(
-            //           bottomLeft: Radius.circular(15),
-            //           bottomRight: Radius.circular(15)),
-            //       border: Border.all(color: Colors.black)),
-            // ),
-
-            //   Container(
-            //     height: 60,
-            //     margin: EdgeInsets.only(
-            //         //bottom: 10,
-            //         //top: 10,
-            //         ),
-            //     padding: EdgeInsets.only(
-            //       left: 20,
-            //       right: 20,
-            //       bottom: 20,
-            //       top: 20,
-            //     ),
-            //     child: Center(
-            //       child: Text(
-            //         'LITERATURA',
-            //         style: TextStyle(
-            //             fontSize: 20,
-            //             fontWeight: FontWeight.bold,
-            //             color: Colors.white),
-            //       ),
-            //     ),
-            //     decoration: BoxDecoration(
-            //         gradient: LinearGradient(
-            //             begin: Alignment.bottomLeft,
-            //             end: Alignment.bottomRight,
-            //             colors: [
-            //               Color.fromRGBO(7, 53, 249, 2),
-            //               Color.fromRGBO(6, 174, 234, 2)
-            //             ]),
-            //         borderRadius: BorderRadius.only(
-            //             topLeft: Radius.circular(15),
-            //             topRight: Radius.circular(15))),
-            //   ),
-            //   //TODO:Esto puede ser un widget
-            //   Container(
-            //     height: 90,
-            //     margin: EdgeInsets.only(
-            //       bottom: 10,
-            //       //top: 10,
-            //     ),
-            //     padding: EdgeInsets.only(
-            //       left: 20,
-            //       right: 20,
-            //       bottom: 20,
-            //       top: 20,
-            //     ),
-            //     child: Row(
-            //       children: [
-            //         Container(
-            //           height: 90,
-            //           child: Column(
-            //             children: [
-            //               Expanded(
-            //                 //TODO: Modificar la info
-            //                 child: Text(
-            //                   'INFO',
-            //                   style:
-            //                       TextStyle(fontSize: 15, color: Colors.black),
-            //                 ),
-            //               ),
-            //               Expanded(
-            //                 child: Text(
-            //                   'Teacher: ',
-            //                   style: TextStyle(
-            //                     fontSize: 10,
-            //                     color: Colors.black,
-            //                   ),
-            //                 ),
-            //               ),
-            //               Expanded(
-            //                 child: Text(
-            //                   'Section: ',
-            //                   style: TextStyle(
-            //                     fontSize: 10,
-            //                     color: Colors.black,
-            //                   ),
-            //                 ),
-            //               )
-            //             ],
-            //           ),
-            //         ),
-            //         //TODO: Esto tiene que ser un widget
-            //         IconButton(
-            //             onPressed: () {
-            //               Navigator.pushNamed(context, 'itemsStudent_view');
-            //             },
-            //             icon: Icon(
-            //               Icons.arrow_circle_right,
-            //               color: Colors.black,
-            //               size: 35,
-            //             ))
-            //       ],
-            //     ),
-            //     decoration: BoxDecoration(
-            //         borderRadius: BorderRadius.only(
-            //             bottomLeft: Radius.circular(15),
-            //             bottomRight: Radius.circular(15)),
-            //         border: Border.all(color: Colors.black)),
-            //   )
           ],
         ),
       ),

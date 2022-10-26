@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ft_evolution_app/widgets/widgets.dart';
 
 class ItemStudentView extends StatelessWidget {
   const ItemStudentView({Key? key}) : super(key: key);
@@ -36,289 +37,98 @@ class ItemStudentView extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(25.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                //TODO: Modificar la posición
-                child: Text(
-                  'Items',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                ),
+              const Text(
+                'Items',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: 'Montserrat'),
+              ),
+              const SizedBox(
+                height: 15,
               ),
               Expanded(
                 child: ListView(
-                  padding: const EdgeInsets.all(25.0),
                   children: [
-                    Container(
-                      height: 75,
-                      margin: EdgeInsets.only(
-                          //bottom: 10,
-                          //top: 10,
-                          ),
-                      padding: EdgeInsets.only(
-                        left: 20,
-                        right: 20,
-                        bottom: 20,
-                        top: 20,
-                      ),
-                      child: Center(
-                        child: RichText(
-                          text: TextSpan(
-                            children: <TextSpan>[
-                              TextSpan(
-                                //TODO: Modificar la posición
-                                text: 'Title of the item   ',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20.0,
-                                ),
-                              ),
-                              TextSpan(
-                                text: '📃', // emoji characters
-                                style: TextStyle(
-                                  fontFamily: 'EmojiOne',
-                                  fontSize: 20.0,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment.bottomLeft,
-                              end: Alignment.bottomRight,
-                              colors: [
-                                Color.fromRGBO(255, 255, 255, 2),
-                                Color.fromRGBO(255, 255, 255, 2)
-                              ]),
-                          boxShadow: [
-                            new BoxShadow(
-                              color: Colors.black87,
-                              offset: new Offset(1, 5),
-                              blurRadius: 10,
-                            )
-                          ],
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(15),
-                              topRight: Radius.circular(15))),
+                    CardButtonCustom(
+                        textHeader: 'Material [DOC]',
+                        textContent:
+                            "Student welcome to the main menu of the application and enjoy learning with the teachers of your educational.",
+                        customIcon: Icons.file_present_outlined,
+                        customColor1: Color.fromARGB(255, 0, 153, 38),
+                        customColor2: Color.fromARGB(255, 112, 211, 0),
+                        pushNamed: 'itemStudentDocumentDetail_view'),
+                    SizedBox(
+                      height: 10,
                     ),
-                    Container(
-                      height: 90,
-                      margin: EdgeInsets.only(
-                        bottom: 10,
-                        //top: 10,
-                      ),
-                      padding: EdgeInsets.only(
-                        left: 20,
-                        right: 20,
-                        bottom: 20,
-                        top: 20,
-                      ),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 90,
-                            child: Column(
-                              children: [
-                                Expanded(
-                                  //TODO: Modificar la info
-                                  child: Text(
-                                    'INFO:',
-                                    style: TextStyle(
-                                        fontSize: 15, color: Colors.black),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Text(
-                                    'Teacher: ',
-                                    style: TextStyle(
-                                      fontSize: 10,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Text(
-                                    'Section: ',
-                                    style: TextStyle(
-                                      fontSize: 10,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                          IconButton(
-                              onPressed: () {
-                                Navigator.pushNamed(
-                                    context, 'itemStudentDocumentDetail_view');
-                              },
-                              icon: Icon(
-                                Icons.remove_red_eye,
-                                color: Colors.black,
-                                size: 35,
-                              ))
-                        ],
-                      ),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(15),
-                            bottomRight: Radius.circular(15)),
-                        gradient: LinearGradient(
-                            begin: Alignment.bottomLeft,
-                            end: Alignment.bottomRight,
-                            colors: [
-                              Color.fromRGBO(255, 255, 255, 2),
-                              Color.fromRGBO(255, 255, 255, 2)
-                            ]),
-                        boxShadow: [
-                          new BoxShadow(
-                            color: Colors.black87,
-                            offset: new Offset(1, 5),
-                            blurRadius: 10,
-                          )
-                        ],
-                      ),
+                    CardButtonCustom(
+                        textHeader: 'Material [VID]',
+                        textContent:
+                            "Student welcome to the main menu of the application and enjoy learning with the teachers of your educational.",
+                        customIcon: Icons.video_camera_back_outlined,
+                        customColor1: Color.fromARGB(255, 0, 153, 38),
+                        customColor2: Color.fromARGB(255, 112, 211, 0),
+                        pushNamed: 'itemStudentVideoDetail_view'),
+                    SizedBox(
+                      height: 10,
                     ),
-                    Container(
-                      height: 75,
-                      margin: EdgeInsets.only(
-                          //bottom: 10,
-                          //top: 10,
-                          ),
-                      padding: EdgeInsets.only(
-                        left: 20,
-                        right: 20,
-                        bottom: 20,
-                        top: 20,
-                      ),
-                      child: Center(
-                        child: RichText(
-                          text: TextSpan(
-                            children: <TextSpan>[
-                              TextSpan(
-                                //TODO: Modificar la posición
-                                text: 'Title of the item   ',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20.0,
-                                ),
-                              ),
-                              TextSpan(
-                                text: '🎥', // emoji characters
-                                style: TextStyle(
-                                  fontFamily: 'EmojiOne',
-                                  fontSize: 20.0,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment.bottomLeft,
-                              end: Alignment.bottomRight,
-                              colors: [
-                                Color.fromRGBO(255, 255, 255, 2),
-                                Color.fromRGBO(255, 255, 255, 2)
-                              ]),
-                          boxShadow: [
-                            new BoxShadow(
-                              color: Colors.black87,
-                              offset: new Offset(1, 5),
-                              blurRadius: 10,
-                            )
-                          ],
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(15),
-                              topRight: Radius.circular(15))),
+                    CardButtonCustom(
+                        textHeader: 'Material [VID]',
+                        textContent:
+                            "Student welcome to the main menu of the application and enjoy learning with the teachers of your educational.",
+                        customIcon: Icons.video_camera_back_outlined,
+                        customColor1: Color.fromARGB(255, 0, 153, 38),
+                        customColor2: Color.fromARGB(255, 112, 211, 0),
+                        pushNamed: 'itemStudentVideoDetail_view'),
+                    SizedBox(
+                      height: 10,
                     ),
-                    Container(
-                      height: 90,
-                      margin: EdgeInsets.only(
-                        bottom: 10,
-                        //top: 10,
-                      ),
-                      padding: EdgeInsets.only(
-                        left: 20,
-                        right: 20,
-                        bottom: 20,
-                        top: 20,
-                      ),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 90,
-                            child: Column(
-                              children: [
-                                Expanded(
-                                  //TODO: Modificar la info
-                                  child: Text(
-                                    'INFO:',
-                                    style: TextStyle(
-                                        fontSize: 15, color: Colors.black),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Text(
-                                    'Teacher: ',
-                                    style: TextStyle(
-                                      fontSize: 10,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Text(
-                                    'Section: ',
-                                    style: TextStyle(
-                                      fontSize: 10,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                          IconButton(
-                              onPressed: () {
-                                Navigator.pushNamed(
-                                    context, 'itemStudentVideoDetail_view');
-                              },
-                              icon: Icon(
-                                Icons.remove_red_eye,
-                                color: Colors.black,
-                                size: 35,
-                              ))
-                        ],
-                      ),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(15),
-                            bottomRight: Radius.circular(15)),
-                        gradient: LinearGradient(
-                            begin: Alignment.bottomLeft,
-                            end: Alignment.bottomRight,
-                            colors: [
-                              Color.fromRGBO(255, 255, 255, 2),
-                              Color.fromRGBO(255, 255, 255, 2)
-                            ]),
-                        boxShadow: [
-                          new BoxShadow(
-                            color: Colors.black87,
-                            offset: new Offset(1, 5),
-                            blurRadius: 10,
-                          )
-                        ],
-                      ),
+                    CardButtonCustom(
+                        textHeader: 'Material [DOC]',
+                        textContent:
+                            "Student welcome to the main menu of the application and enjoy learning with the teachers of your educational.",
+                        customIcon: Icons.file_present_outlined,
+                        customColor1: Color.fromARGB(255, 0, 153, 38),
+                        customColor2: Color.fromARGB(255, 112, 211, 0),
+                        pushNamed: 'itemStudentDocumentDetail_view'),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    CardButtonCustom(
+                        textHeader: 'Material [VID]',
+                        textContent:
+                            "Student welcome to the main menu of the application and enjoy learning with the teachers of your educational.",
+                        customIcon: Icons.video_camera_back_outlined,
+                        customColor1: Color.fromARGB(255, 0, 153, 38),
+                        customColor2: Color.fromARGB(255, 112, 211, 0),
+                        pushNamed: 'itemStudentVideoDetail_view'),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    CardButtonCustom(
+                        textHeader: 'Material [DOC]',
+                        textContent:
+                            "Student welcome to the main menu of the application and enjoy learning with the teachers of your educational.",
+                        customIcon: Icons.file_present_outlined,
+                        customColor1: Color.fromARGB(255, 0, 153, 38),
+                        customColor2: Color.fromARGB(255, 112, 211, 0),
+                        pushNamed: 'itemStudentDocumentDetail_view'),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    CardButtonCustom(
+                        textHeader: 'Material [VID]',
+                        textContent:
+                            "Student welcome to the main menu of the application and enjoy learning with the teachers of your educational.",
+                        customIcon: Icons.video_camera_back_outlined,
+                        customColor1: Color.fromARGB(255, 0, 153, 38),
+                        customColor2: Color.fromARGB(255, 112, 211, 0),
+                        pushNamed: 'itemStudentVideoDetail_view'),
+                    SizedBox(
+                      height: 10,
                     ),
                   ],
                 ),
