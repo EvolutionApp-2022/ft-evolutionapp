@@ -25,7 +25,9 @@ class CourseStudentView extends StatelessWidget {
         centerTitle: true,
         actions: [
           IconButton(
-              onPressed: (){},
+              onPressed: (){
+                Navigator.pushNamed(context, 'profileStudent_view');
+              },
               icon: Icon(Icons.person, color: Colors.black,)
           )
         ],
@@ -112,7 +114,9 @@ class CourseStudentView extends StatelessWidget {
                     ),
                     //TODO: Aquí modificar esta sección
                     IconButton(
-                        onPressed: (){},
+                        onPressed: (){
+                          Navigator.pushNamed(context, 'itemsStudent_view');
+                        },
                         icon: Icon(Icons.arrow_circle_right, color: Colors.black, size: 35,)
                     )
                   ],

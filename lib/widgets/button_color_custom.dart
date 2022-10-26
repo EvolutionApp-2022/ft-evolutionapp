@@ -6,6 +6,8 @@ class ButtonColorCustom extends StatelessWidget {
   final Color customColor1;
   final Color customColor2;
   final double? customHigh;
+  final bool? addIcon;
+  final IconData? customIcon;
 
   const ButtonColorCustom({
     Key? key,
@@ -14,6 +16,8 @@ class ButtonColorCustom extends StatelessWidget {
     required this.customColor2,
     required this.pushNamed,
     this.customHigh,
+    this.customIcon,
+    this.addIcon,
   }) : super(key: key);
 
   @override
@@ -37,14 +41,24 @@ class ButtonColorCustom extends StatelessWidget {
         ),
         onPressed: () {
           Navigator.pushNamed(context, pushNamed);
-          Navigator.pushNamed(context, pushNamed);
         },
-        child: Text(
-          customText,
-          style: TextStyle(
-              fontWeight: FontWeight.w700,
-              fontSize: 18,
-              fontFamily: 'Montserrat'),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          child: Row(
+            mainAxisAlignment: (addIcon == true)
+                ? MainAxisAlignment.spaceBetween
+                : MainAxisAlignment.center,
+            children: [
+              Text(
+                customText,
+                style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 18,
+                    fontFamily: 'Montserrat'),
+              ),
+              (addIcon == true) ? Icon(customIcon) : SizedBox(),
+            ],
+          ),
         ),
       ),
     );

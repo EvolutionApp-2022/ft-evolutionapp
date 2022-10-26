@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ft_evolution_app/widgets/widgets.dart';
 
 class DashboardStudentView extends StatefulWidget {
   const DashboardStudentView({Key? key}) : super(key: key);
@@ -8,445 +9,124 @@ class DashboardStudentView extends StatefulWidget {
 }
 
 class _DashboardStudentView extends State<DashboardStudentView> {
-
   //var parser = EmojiParser();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       //AppBar
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        title: Text('Evolution',
-          style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold
-          ),
+        title: Text(
+          'Evolution',
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
-        /*leading: IconButton(
-          icon: Icon(Icons.arrow_back_rounded, color: Colors.black,),
-          onPressed: (){
-            Navigator.pop(context);
-          },
-        ),*/
         centerTitle: true,
         actions: [
           IconButton(
               onPressed: () {
                 Navigator.pushNamed(context, 'profileStudent_view');
               },
-              icon: Icon(Icons.person, color: Colors.black,)
-          )
+              icon: Icon(
+                Icons.person,
+                color: Colors.black,
+              ))
         ],
       ),
 
       //Contenido
-      body:
-      Center(
-        child: Container(
-          padding: const EdgeInsets.all(25.0),
-          child: Column(
-            //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: RichText(
-                  text: TextSpan(
-                    children: <TextSpan>[
-                      TextSpan(
-                        text: 'Welcome!',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 40.0,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+      body: Padding(
+        padding: const EdgeInsets.all(25.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Welcome',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 30,
+                  fontWeight: FontWeight.w900,
+                  fontFamily: 'Montserrat'),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Text(
+              'Hello Student! 👋',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Montserrat'),
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 10),
+              child: Text(
+                "Student welcome to the main menu of the application and enjoy learning with the teachers of your educational institution.",
+                textAlign: TextAlign.justify,
               ),
-
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: RichText(
-                  text: TextSpan(
-                    children: <TextSpan>[
-                      TextSpan(
-                        //TODO: Modificar la posición
-                        text: 'Hi Alumno Name',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20.0,
-                        ),
-                      ),
-                      TextSpan(
-                        text: '✌️', // emoji characters
-                        style: TextStyle(
-                          fontFamily: 'EmojiOne',
-                          fontSize: 20.0,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Text('Lorem ipsum dolor sit amet,consectetur adipiscing elit.Nullam vestibulum.',
-                  style: TextStyle(
-                      fontSize: 17
-                  ),
-                ),
-              ),
-
-              SizedBox(
-                height: 10,
-              ),
-
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                //TODO: Modificar la posición
-                child: Text('Courses',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25
-                  ),
-                ),
-              ),
-
-              SizedBox(
-                height: 5,
-              ),
-
-              Expanded(
-                child: ListView(
-                  padding: const EdgeInsets.all(25.0),
-                  children: [
-                    Container(
-                      height: 60,
-                      margin: EdgeInsets.only(
-                        //bottom: 10,
-                        //top: 10,
-                      ),
-                      padding: EdgeInsets.only(
-                        left: 20,
-                        right: 20,
-                        bottom: 20,
-                        top: 20,
-                      ),
-                      child: Center(
-                        child: Text('ALGEBRA',
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment.bottomLeft,
-                              end: Alignment.bottomRight,
-                              colors: [
-                                Color.fromRGBO(7, 53, 249, 2),
-                                Color.fromRGBO(6, 174, 234, 2)
-                              ]
-                          ),
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(15),
-                              topRight: Radius.circular(15)
-                          )
-                      ),
-                    ),
-
-
-                    //TODO:Esto puede ser un widget
-                    Container(
-                      height: 90,
-                      margin: EdgeInsets.only(
-                        bottom: 10,
-                        //top: 10,
-                      ),
-                      padding: EdgeInsets.only(
-                        left: 20,
-                        right: 20,
-                        bottom: 20,
-                        top: 20,
-                      ),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 90,
-                            child: Column(
-                              children: [
-                                Expanded(
-                                  //TODO: Modificar la info
-                                  child: Text('INFO',
-                                    style: TextStyle(
-                                        fontSize: 15,
-                                        color: Colors.black
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Text('Teacher: ',
-                                    style: TextStyle(
-                                      fontSize: 10,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Text('Section: ',
-                                    style: TextStyle(
-                                      fontSize: 10,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                          //TODO: Esto tiene que ser un widget
-                          IconButton(
-                              onPressed: () {
-                                Navigator.pushNamed(context, 'itemsStudent_view');
-                              },
-                              icon: Icon(Icons.arrow_circle_right, color: Colors.black, size: 35,)
-                          )
-                        ],
-                      ),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(15),
-                              bottomRight: Radius.circular(15)
-                          ),
-                          border: Border.all(
-                              color: Colors.black
-                          )
-                      ),
-                    ),
-
-                    Container(
-                      height: 60,
-                      margin: EdgeInsets.only(
-                        //bottom: 10,
-                        //top: 10,
-                      ),
-                      padding: EdgeInsets.only(
-                        left: 20,
-                        right: 20,
-                        bottom: 20,
-                        top: 20,
-                      ),
-                      child: Center(
-                        child: Text('GEOMETRIA',
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment.bottomLeft,
-                              end: Alignment.bottomRight,
-                              colors: [
-                                Color.fromRGBO(7, 53, 249, 2),
-                                Color.fromRGBO(6, 174, 234, 2)
-                              ]
-                          ),
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(15),
-                              topRight: Radius.circular(15)
-                          )
-                      ),
-                    ),
-                    //TODO:Esto puede ser un widget
-                    Container(
-                      height: 90,
-                      margin: EdgeInsets.only(
-                        bottom: 10,
-                        //top: 10,
-                      ),
-                      padding: EdgeInsets.only(
-                        left: 20,
-                        right: 20,
-                        bottom: 20,
-                        top: 20,
-                      ),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 90,
-                            child: Column(
-                              children: [
-                                Expanded(
-                                  //TODO: Modificar la info
-                                  child: Text('INFO',
-                                    style: TextStyle(
-                                        fontSize: 15,
-                                        color: Colors.black
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Text('Teacher: ',
-                                    style: TextStyle(
-                                      fontSize: 10,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Text('Section: ',
-                                    style: TextStyle(
-                                      fontSize: 10,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                          //TODO: Esto tiene que ser un widget
-                          IconButton(
-                              onPressed: () {
-                                Navigator.pushNamed(context, 'itemsStudent_view');
-                              },
-                              icon: Icon(Icons.arrow_circle_right, color: Colors.black, size: 35,)
-                          )
-                        ],
-                      ),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(15),
-                              bottomRight: Radius.circular(15)
-                          ),
-                          border: Border.all(
-                              color: Colors.black
-                          )
-                      ),
-                    ),
-
-                    Container(
-                      height: 60,
-                      margin: EdgeInsets.only(
-                        //bottom: 10,
-                        //top: 10,
-                      ),
-                      padding: EdgeInsets.only(
-                        left: 20,
-                        right: 20,
-                        bottom: 20,
-                        top: 20,
-                      ),
-                      child: Center(
-                        child: Text('LITERATURA',
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment.bottomLeft,
-                              end: Alignment.bottomRight,
-                              colors: [
-                                Color.fromRGBO(7, 53, 249, 2),
-                                Color.fromRGBO(6, 174, 234, 2)
-                              ]
-                          ),
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(15),
-                              topRight: Radius.circular(15)
-                          )
-                      ),
-                    ),
-                    //TODO:Esto puede ser un widget
-                    Container(
-                      height: 90,
-                      margin: EdgeInsets.only(
-                        bottom: 10,
-                        //top: 10,
-                      ),
-                      padding: EdgeInsets.only(
-                        left: 20,
-                        right: 20,
-                        bottom: 20,
-                        top: 20,
-                      ),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 90,
-                            child: Column(
-                              children: [
-                                Expanded(
-                                  //TODO: Modificar la info
-                                  child: Text('INFO',
-                                    style: TextStyle(
-                                        fontSize: 15,
-                                        color: Colors.black
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Text('Teacher: ',
-                                    style: TextStyle(
-                                      fontSize: 10,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Text('Section: ',
-                                    style: TextStyle(
-                                      fontSize: 10,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                          //TODO: Esto tiene que ser un widget
-                          IconButton(
-                              onPressed: () {
-                                Navigator.pushNamed(context, 'itemsStudent_view');
-                              },
-                              icon: Icon(Icons.arrow_circle_right, color: Colors.black, size: 35,)
-                          )
-                        ],
-                      ),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(15),
-                              bottomRight: Radius.circular(15)
-                          ),
-                          border: Border.all(
-                              color: Colors.black
-                          )
-                      ),
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Text(
+              'Action',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Montserrat'),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            ButtonColorCustom(
+                customText: 'View all courses',
+                customColor1: Color.fromARGB(255, 255, 81, 0),
+                customColor2: Color.fromARGB(255, 236, 183, 10),
+                pushNamed: 'coursesStudent_view',
+                addIcon: true,
+                customIcon: Icons.arrow_circle_right_sharp),
+            SizedBox(
+              height: 15,
+            ),
+            Text(
+              'Courses',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Montserrat'),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            CardButtonCustom(
+              customColor1: Color.fromARGB(255, 25, 0, 255),
+              customColor2: Color.fromARGB(255, 0, 185, 241),
+              customIcon: Icons.remove_red_eye,
+              pushNamed: 'itemsStudent_view',
+              textContent:
+                  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys.',
+              textHeader: 'ALGEBRA',
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            CardButtonCustom(
+              customColor1: Color.fromARGB(255, 25, 0, 255),
+              customColor2: Color.fromARGB(255, 0, 185, 241),
+              customIcon: Icons.remove_red_eye,
+              pushNamed: 'itemsStudent_view',
+              textContent:
+                  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys.',
+              textHeader: 'ARITMETICA',
+            ),
+          ],
         ),
       ),
-
-
     );
   }
 }

@@ -80,94 +80,25 @@ class _DashboardViewState extends State<DashboardView> {
                       fontSize: 20),
                 ),
               ),
-              Container(
-                height: 65,
-                margin: const EdgeInsets.only(
-                    bottom: 10,
-                    //top: 10,
-                    left: 20,
-                    right: 20),
-                padding: const EdgeInsets.only(
-                  left: 20,
-                  right: 20,
-                  bottom: 20,
-                  top: 10,
-                ),
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                      begin: Alignment.bottomLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        Color.fromRGBO(242, 102, 5, 2),
-                        Color.fromRGBO(242, 177, 5, 2)
-                      ]),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: Row(
-                  children: [
-                    const Expanded(
-                      child: Text(
-                        'Create new sesion',
-                        style: TextStyle(
-                            fontSize: 22,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.add_circle_outlined,
-                          color: Colors.black,
-                          size: 35,
-                        )),
-                  ],
-                ),
+              ButtonColorCustom(
+                  customText: 'Create new section',
+                  customColor1: Color.fromRGBO(242, 101, 5, 1.0),
+                  customColor2: Color.fromRGBO(242, 177, 5, 1.0),
+                  addIcon: true,
+                  customIcon: Icons.add_circle,
+                  pushNamed: 'create_section_view'),
+              SizedBox(
+                height: 5,
               ),
-              Container(
-                height: 65,
-                margin: const EdgeInsets.only(
-
-                    //top: 10,
-                    left: 20,
-                    right: 20),
-                padding: const EdgeInsets.only(
-                  left: 20,
-                  right: 20,
-                  bottom: 20,
-                  top: 10,
-                ),
-                decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                        begin: Alignment.bottomLeft,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          Color.fromRGBO(242, 102, 5, 2),
-                          Color.fromRGBO(242, 177, 5, 2)
-                        ]),
-                    borderRadius: BorderRadius.circular(15)),
-                child: Row(
-                  children: [
-                    const Expanded(
-                      child: Text(
-                        'View courses',
-                        style: TextStyle(
-                            fontSize: 22,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    IconButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, 'courses_view');
-                        },
-                        icon: const Icon(
-                          Icons.add_circle_outlined,
-                          color: Colors.black,
-                          size: 35,
-                        )),
-                  ],
-                ),
+              ButtonColorCustom(
+                  customText: 'View courses',
+                  customColor1: Color.fromRGBO(242, 101, 5, 1.0),
+                  customColor2: Color.fromRGBO(242, 177, 5, 1.0),
+                  addIcon: true,
+                  customIcon: Icons.add_circle,
+                  pushNamed: 'courses_view'),
+              SizedBox(
+                height: 5,
               ),
               const Padding(
                 padding: EdgeInsets.all(20.0),
