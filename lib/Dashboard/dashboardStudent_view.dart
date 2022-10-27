@@ -107,7 +107,7 @@ class _DashboardStudentView extends State<DashboardStudentView> {
               customColor1: Color.fromARGB(255, 25, 0, 255),
               customColor2: Color.fromARGB(255, 0, 185, 241),
               customIcon: Icons.remove_red_eye,
-              pushNamed: 'itemsStudent_view',
+              pushNamed: 'coursesStudent_view',
               textContent:
                   'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys.',
               textHeader: 'ALGEBRA',
@@ -119,7 +119,7 @@ class _DashboardStudentView extends State<DashboardStudentView> {
               customColor1: Color.fromARGB(255, 25, 0, 255),
               customColor2: Color.fromARGB(255, 0, 185, 241),
               customIcon: Icons.remove_red_eye,
-              pushNamed: 'itemsStudent_view',
+              pushNamed: 'coursesStudent_view',
               textContent:
                   'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys.',
               textHeader: 'ARITMETICA',
