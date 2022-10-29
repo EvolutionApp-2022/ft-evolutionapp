@@ -47,79 +47,105 @@ class _DashboardViewState extends State<DashboardView> {
               ))
         ],
       ),
-      body: Center(
-        child: Container(
-          padding: const EdgeInsets.all(25.0),
-          child: Column(
-            //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              const Padding(
-                padding: EdgeInsets.all(10.0),
-                child: Text(
-                  'Hi Docente Name',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                ),
+      body: Padding(
+        padding: const EdgeInsets.all(25.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Welcome',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 30,
+                  fontWeight: FontWeight.w900,
+                  fontFamily: 'Montserrat'),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Text(
+              'Hello Teacher! 👋',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Montserrat'),
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 10),
+              child: Text(
+                "Teacher welcome to the main menu of the application and enjoy learning with the students of your educational institution.",
+                textAlign: TextAlign.justify,
               ),
-              const Padding(
-                padding: EdgeInsets.all(10.0),
-                child: Text(
-                  'Lorem ipsum dolor sit amet,consectetur adipiscing elit.Nullam vestibulum.',
-                  style: TextStyle(fontSize: 17),
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.all(10.0),
-                child: Text(
-                  'Actions',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                ),
-              ),
-              ButtonColorCustom(
-                  customText: 'Create new section',
-                  customColor1: Color.fromRGBO(242, 101, 5, 1.0),
-                  customColor2: Color.fromRGBO(242, 177, 5, 1.0),
-                  addIcon: true,
-                  customIcon: Icons.add_circle,
-                  pushNamed: 'create_section_view'),
-              SizedBox(
-                height: 5,
-              ),
-              ButtonColorCustom(
-                  customText: 'View courses',
-                  customColor1: Color.fromRGBO(242, 101, 5, 1.0),
-                  customColor2: Color.fromRGBO(242, 177, 5, 1.0),
-                  addIcon: true,
-                  customIcon: Icons.add_circle,
-                  pushNamed: 'courses_view'),
-              SizedBox(
-                height: 5,
-              ),
-              const Padding(
-                padding: EdgeInsets.all(20.0),
-                child: Text(
-                  'Courses',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                ),
-              ),
-              const Expanded(
-                child: CardCustom(
-                  title: "ALGEBRA",
-                  textContent:
-                      "Incididunt ut cillum dolore cupidatat aliquip non nisi ad.",
-                  navigationPath: 'course_detail_view',
-                ),
-              ),
-            ],
-          ),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Text(
+              'Action',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Montserrat'),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            ButtonColorCustom(
+                customText: 'Announcements',
+                customColor1: Color.fromARGB(255, 255, 81, 0),
+                customColor2: Color.fromARGB(255, 236, 183, 10),
+                pushNamed: 'announcement_view',
+                addIcon: true,
+                customIcon: Icons.arrow_circle_right_sharp),
+            SizedBox(
+              height: 8,
+            ),
+            ButtonColorCustom(
+                customText: 'Courses',
+                customColor1: Color.fromARGB(255, 255, 81, 0),
+                customColor2: Color.fromARGB(255, 236, 183, 10),
+                pushNamed: 'coursesStudent_view',
+                addIcon: true,
+                customIcon: Icons.arrow_circle_right_sharp),
+            SizedBox(
+              height: 15,
+            ),
+            Text(
+              'Courses recently visited',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Montserrat'),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            CardButtonCustom(
+              customColor1: Color.fromARGB(255, 25, 0, 255),
+              customColor2: Color.fromARGB(255, 0, 185, 241),
+              customIcon: Icons.remove_red_eye,
+              pushNamed: 'coursesStudent_view',
+              textContent:
+                  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys.',
+              textHeader: 'ALGEBRA',
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            CardButtonCustom(
+              customColor1: Color.fromARGB(255, 25, 0, 255),
+              customColor2: Color.fromARGB(255, 0, 185, 241),
+              customIcon: Icons.remove_red_eye,
+              pushNamed: 'coursesStudent_view',
+              textContent:
+                  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys.',
+              textHeader: 'ARITMETICA',
+            ),
+          ],
         ),
       ),
     );
