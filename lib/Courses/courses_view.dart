@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ft_evolution_app/widgets/widgets.dart';
 
 class CoursesView extends StatefulWidget {
   const CoursesView({Key? key}) : super(key: key);
@@ -39,363 +40,115 @@ class _CoursesViewState extends State<CoursesView> {
               ))
         ],
       ),
-      body: Column(
-        children: [
-          const Text(
-            'Courses',
-            style: TextStyle(
-                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
-          ),
-          Expanded(
-            child: ListView(
-              padding: const EdgeInsets.all(35.0),
-              children: [
-                Container(
-                  height: 60,
-                  margin: const EdgeInsets.only(
-                      //bottom: 10,
-                      //top: 10,
-                      ),
-                  padding: const EdgeInsets.only(
-                    left: 20,
-                    right: 20,
-                    bottom: 20,
-                    top: 20,
-                  ),
-                  decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: Alignment.bottomLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            Color.fromRGBO(7, 53, 249, 2),
-                            Color.fromRGBO(6, 174, 234, 2)
-                          ]),
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(15),
-                          topRight: Radius.circular(15))),
-                  child: const Center(
-                    child: Text(
-                      'ALGEBRA',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 90,
-                  margin: const EdgeInsets.only(
-                    bottom: 10,
-                    //top: 10,
-                  ),
-                  padding: const EdgeInsets.only(
-                    left: 20,
-                    right: 20,
-                    bottom: 20,
-                    top: 20,
-                  ),
-                  decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(15),
-                          bottomRight: Radius.circular(15)),
-                      border: Border.all(color: Colors.black)),
-                  child: Row(
-                    children: [
-                      const Expanded(
-                        child: Text(
-                          'Lorem Ipsum is simply dummy sample text of the printing.',
-                          style: TextStyle(fontSize: 15, color: Colors.black),
-                        ),
-                      ),
-                      IconButton(
-                          onPressed: () {
-                            Navigator.pushNamed(context, 'course_detail_view');
-                          },
-                          icon: const Icon(
-                            Icons.arrow_circle_right,
-                            color: Colors.black,
-                            size: 35,
-                          ))
-                    ],
-                  ),
-                ),
-                Container(
-                  height: 60,
-                  margin: const EdgeInsets.only(
-                      //bottom: 10,
-                      //top: 10,
-                      ),
-                  padding: const EdgeInsets.only(
-                    left: 20,
-                    right: 20,
-                    bottom: 20,
-                    top: 20,
-                  ),
-                  decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: Alignment.bottomLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            Color.fromRGBO(7, 53, 249, 2),
-                            Color.fromRGBO(6, 174, 234, 2)
-                          ]),
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(15),
-                          topRight: Radius.circular(15))),
-                  child: const Center(
-                    child: Text(
-                      'GEOMETRIA',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 90,
-                  margin: const EdgeInsets.only(
-                    bottom: 10,
-                    //top: 10,
-                  ),
-                  padding: const EdgeInsets.only(
-                    left: 20,
-                    right: 20,
-                    bottom: 20,
-                    top: 20,
-                  ),
-                  decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(15),
-                          bottomRight: Radius.circular(15)),
-                      border: Border.all(color: Colors.black)),
-                  child: Row(
-                    children: [
-                      const Expanded(
-                        child: Text(
-                          'Lorem Ipsum is simply dummy sample text of the printing.',
-                          style: TextStyle(fontSize: 15, color: Colors.black),
-                        ),
-                      ),
-                      IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.arrow_circle_right,
-                            color: Colors.black,
-                            size: 35,
-                          ))
-                    ],
-                  ),
-                ),
-                Container(
-                  height: 60,
-                  margin: const EdgeInsets.only(
-                      //bottom: 10,
-                      //top: 10,
-                      ),
-                  padding: const EdgeInsets.only(
-                    left: 20,
-                    right: 20,
-                    bottom: 20,
-                    top: 20,
-                  ),
-                  decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: Alignment.bottomLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            Color.fromRGBO(7, 53, 249, 2),
-                            Color.fromRGBO(6, 174, 234, 2)
-                          ]),
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(15),
-                          topRight: Radius.circular(15))),
-                  child: const Center(
-                    child: Text(
-                      'LITERATURA',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 90,
-                  margin: const EdgeInsets.only(
-                    bottom: 10,
-                    //top: 10,
-                  ),
-                  padding: const EdgeInsets.only(
-                    left: 20,
-                    right: 20,
-                    bottom: 20,
-                    top: 20,
-                  ),
-                  decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(15),
-                          bottomRight: Radius.circular(15)),
-                      border: Border.all(color: Colors.black)),
-                  child: Row(
-                    children: [
-                      const Expanded(
-                        child: Text(
-                          'Lorem Ipsum is simply dummy sample text of the printing.',
-                          style: TextStyle(fontSize: 15, color: Colors.black),
-                        ),
-                      ),
-                      IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.arrow_circle_right,
-                            color: Colors.black,
-                            size: 35,
-                          ))
-                    ],
-                  ),
-                ),
-                Container(
-                  height: 60,
-                  margin: const EdgeInsets.only(
-                      //bottom: 10,
-                      //top: 10,
-                      ),
-                  padding: const EdgeInsets.only(
-                    left: 20,
-                    right: 20,
-                    bottom: 20,
-                    top: 20,
-                  ),
-                  decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: Alignment.bottomLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            Color.fromRGBO(7, 53, 249, 2),
-                            Color.fromRGBO(6, 174, 234, 2)
-                          ]),
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(15),
-                          topRight: Radius.circular(15))),
-                  child: const Center(
-                    child: Text(
-                      'TRIGONOMETRIA',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 90,
-                  margin: const EdgeInsets.only(
-                    bottom: 10,
-                    //top: 10,
-                  ),
-                  padding: const EdgeInsets.only(
-                    left: 20,
-                    right: 20,
-                    bottom: 20,
-                    top: 20,
-                  ),
-                  decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(15),
-                          bottomRight: Radius.circular(15)),
-                      border: Border.all(color: Colors.black)),
-                  child: Row(
-                    children: [
-                      const Expanded(
-                        child: Text(
-                          'Lorem Ipsum is simply dummy sample text of the printing.',
-                          style: TextStyle(fontSize: 15, color: Colors.black),
-                        ),
-                      ),
-                      IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.arrow_circle_right,
-                            color: Colors.black,
-                            size: 35,
-                          ))
-                    ],
-                  ),
-                ),
-                Container(
-                  height: 60,
-                  margin: const EdgeInsets.only(
-                      //bottom: 10,
-                      //top: 10,
-                      ),
-                  padding: const EdgeInsets.only(
-                    left: 20,
-                    right: 20,
-                    bottom: 20,
-                    top: 20,
-                  ),
-                  decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: Alignment.bottomLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            Color.fromRGBO(7, 53, 249, 2),
-                            Color.fromRGBO(6, 174, 234, 2)
-                          ]),
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(15),
-                          topRight: Radius.circular(15))),
-                  child: const Center(
-                    child: Text(
-                      'QUIMICA',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 90,
-                  margin: const EdgeInsets.only(
-                    bottom: 10,
-                    //top: 10,
-                  ),
-                  padding: const EdgeInsets.only(
-                    left: 20,
-                    right: 20,
-                    bottom: 20,
-                    top: 20,
-                  ),
-                  decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(15),
-                          bottomRight: Radius.circular(15)),
-                      border: Border.all(color: Colors.black)),
-                  child: Row(
-                    children: [
-                      const Expanded(
-                        child: Text(
-                          'Lorem Ipsum is simply dummy sample text of the printing.',
-                          style: TextStyle(fontSize: 15, color: Colors.black),
-                        ),
-                      ),
-                      IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.arrow_circle_right,
-                            color: Colors.black,
-                            size: 35,
-                          ))
-                    ],
-                  ),
-                ),
-              ],
+      body: Padding(
+        padding: const EdgeInsets.all(25.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Action',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Montserrat'),
             ),
-          )
-        ],
+            SizedBox(
+              height: 15,
+            ),
+            ButtonColorCustom(
+                customText: 'Create new section',
+                customColor1: Color.fromARGB(255, 255, 81, 0),
+                customColor2: Color.fromARGB(255, 236, 183, 10),
+                pushNamed: 'create_section_view',
+                addIcon: true,
+                customIcon: Icons.arrow_circle_right_sharp),
+            SizedBox(
+              height: 8,
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Text(
+              'Courses',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Montserrat'),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Expanded(
+                child: ListView(children: [
+              CardButtonCustom(
+                  textHeader: 'ALGEBRA',
+                  textContent:
+                      'Lorem Ipsum is simply dummy sample text of the printing.Lorem Ipsum is simply dummy.',
+                  customIcon: Icons.arrow_circle_right_rounded,
+                  customColor1: Color.fromRGBO(7, 53, 249, 2),
+                  customColor2: Color.fromRGBO(6, 174, 234, 2),
+                  pushNamed: 'pushNamed'),
+              SizedBox(
+                height: 10,
+              ),
+              CardButtonCustom(
+                  textHeader: 'GEOMETRIA',
+                  textContent:
+                      'Lorem Ipsum is simply dummy sample text of the printing.Lorem Ipsum is simply dummy.',
+                  customIcon: Icons.arrow_circle_right_rounded,
+                  customColor1: Color.fromRGBO(7, 53, 249, 2),
+                  customColor2: Color.fromRGBO(6, 174, 234, 2),
+                  pushNamed: 'pushNamed'),
+              SizedBox(
+                height: 10,
+              ),
+              CardButtonCustom(
+                  textHeader: 'ARITMETICA',
+                  textContent:
+                      'Lorem Ipsum is simply dummy sample text of the printing.Lorem Ipsum is simply dummy.',
+                  customIcon: Icons.arrow_circle_right_rounded,
+                  customColor1: Color.fromRGBO(7, 53, 249, 2),
+                  customColor2: Color.fromRGBO(6, 174, 234, 2),
+                  pushNamed: 'pushNamed'),
+              SizedBox(
+                height: 10,
+              ),
+              CardButtonCustom(
+                  textHeader: 'BIOLOGIA',
+                  textContent:
+                      'Lorem Ipsum is simply dummy sample text of the printing.Lorem Ipsum is simply dummy.',
+                  customIcon: Icons.arrow_circle_right_rounded,
+                  customColor1: Color.fromRGBO(7, 53, 249, 2),
+                  customColor2: Color.fromRGBO(6, 174, 234, 2),
+                  pushNamed: 'pushNamed'),
+              SizedBox(
+                height: 10,
+              ),
+              CardButtonCustom(
+                  textHeader: 'LITERATURA',
+                  textContent:
+                      'Lorem Ipsum is simply dummy sample text of the printing.Lorem Ipsum is simply dummy.',
+                  customIcon: Icons.arrow_circle_right_rounded,
+                  customColor1: Color.fromRGBO(7, 53, 249, 2),
+                  customColor2: Color.fromRGBO(6, 174, 234, 2),
+                  pushNamed: 'pushNamed'),
+              SizedBox(
+                height: 10,
+              ),
+              CardButtonCustom(
+                  textHeader: 'TRIGONOMETRIA',
+                  textContent:
+                      'Lorem Ipsum is simply dummy sample text of the printing.Lorem Ipsum is simply dummy.',
+                  customIcon: Icons.arrow_circle_right_rounded,
+                  customColor1: Color.fromRGBO(7, 53, 249, 2),
+                  customColor2: Color.fromRGBO(6, 174, 234, 2),
+                  pushNamed: 'pushNamed'),
+            ]))
+          ],
+        ),
       ),
     );
   }

@@ -58,7 +58,7 @@ class _AnnouncementViewState extends State<AnnouncementView> {
               height: 15,
             ),
             ButtonColorCustom(
-                customText: 'Announcements',
+                customText: 'Create Announcement',
                 customColor1: Color.fromARGB(255, 255, 81, 0),
                 customColor2: Color.fromARGB(255, 236, 183, 10),
                 pushNamed: 'post_view',
@@ -93,6 +93,53 @@ class _AnnouncementViewState extends State<AnnouncementView> {
               SizedBox(
                 height: 10,
               ),
+              CardButtonCustom(
+                  textHeader: 'Reunion',
+                  textContent: 'textContent',
+                  customIcon: Icons.announcement,
+                  customColor1: Color.fromARGB(255, 34, 0, 224),
+                  customColor2: Color.fromARGB(157, 35, 0, 124),
+                  pushNamed: 'pushNamed'),
+              SizedBox(
+                height: 10,
+              ),
+              CardButtonCustom(
+                  textHeader: 'Reunion',
+                  textContent: 'textContent',
+                  customIcon: Icons.announcement,
+                  customColor1: Color.fromARGB(255, 34, 0, 224),
+                  customColor2: Color.fromARGB(157, 35, 0, 124),
+                  pushNamed: 'pushNamed'),
+              SizedBox(
+                height: 10,
+              ),
+              CardButtonCustom(
+                  textHeader: 'Reunion',
+                  textContent: 'textContent',
+                  customIcon: Icons.announcement,
+                  customColor1: Color.fromARGB(255, 34, 0, 224),
+                  customColor2: Color.fromARGB(157, 35, 0, 124),
+                  pushNamed: 'pushNamed'),
+              SizedBox(
+                height: 10,
+              ),
+              CardButtonCustom(
+                  textHeader: 'Reunion',
+                  textContent: 'textContent',
+                  customIcon: Icons.announcement,
+                  customColor1: Color.fromARGB(255, 34, 0, 224),
+                  customColor2: Color.fromARGB(157, 35, 0, 124),
+                  pushNamed: 'pushNamed'),
+              SizedBox(
+                height: 10,
+              ),
+              CardButtonCustom(
+                  textHeader: 'Reunion',
+                  textContent: 'textContent',
+                  customIcon: Icons.announcement,
+                  customColor1: Color.fromARGB(255, 34, 0, 224),
+                  customColor2: Color.fromARGB(157, 35, 0, 124),
+                  pushNamed: 'pushNamed'),
             ]))
           ],
         ),

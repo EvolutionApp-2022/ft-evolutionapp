@@ -107,7 +107,7 @@ class _DashboardViewState extends State<DashboardView> {
                 customText: 'Courses',
                 customColor1: Color.fromARGB(255, 255, 81, 0),
                 customColor2: Color.fromARGB(255, 236, 183, 10),
-                pushNamed: 'coursesStudent_view',
+                pushNamed: 'courses_view',
                 addIcon: true,
                 customIcon: Icons.arrow_circle_right_sharp),
             SizedBox(

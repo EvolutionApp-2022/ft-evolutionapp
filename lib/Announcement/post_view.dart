@@ -71,49 +71,6 @@ class _PostViewState extends State<PostView> {
                   ButtonCustom(
                       sampleText: "Post Announcement",
                       pushNamed: 'announcement_view')
-                ]))
-        // SingleChildScrollView(
-        //   child: Column(
-        //     children: [
-        //       Text(
-        //         "Title",
-        //         style: TextStyle(
-        //           fontSize: 25,
-        //           fontWeight: FontWeight.bold,
-        //         ),
-        //       ),
-        //       TextFormField(
-        //         decoration: InputDecoration(
-        //             hintText: "Title here",
-        //             labelText: "Title",
-        //             border: OutlineInputBorder(
-        //               borderRadius: BorderRadius.circular(10),
-        //             )),
-        //       ),
-        //       Text(
-        //         "Description",
-        //         style: TextStyle(
-        //           fontSize: 25,
-        //           fontWeight: FontWeight.bold,
-        //         ),
-        //       ),
-        //       TextFormField(
-        //         decoration: InputDecoration(
-        //             hintText: "Write description here",
-        //             labelText: "Description",
-        //             border: OutlineInputBorder(
-        //               borderRadius: BorderRadius.circular(5),
-        //             )),
-        //         maxLines: 8,
-        //       ),
-        //       SizedBox(
-        //         height: 30,
-        //       ),
-        //       ButtonCustom(
-        //           sampleText: "Post Announcement", pushNamed: 'announcement_view')
-        //     ],
-        //   ),
-        // ),
-        );
+                ])));
   }
 }
