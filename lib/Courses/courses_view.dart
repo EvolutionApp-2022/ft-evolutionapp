@@ -90,7 +90,7 @@ class _CoursesViewState extends State<CoursesView> {
                   customIcon: Icons.arrow_circle_right_rounded,
                   customColor1: Color.fromRGBO(7, 53, 249, 2),
                   customColor2: Color.fromRGBO(6, 174, 234, 2),
-                  pushNamed: 'pushNamed'),
+                  pushNamed: 'course_detail_view'),
               SizedBox(
                 height: 10,
               ),
