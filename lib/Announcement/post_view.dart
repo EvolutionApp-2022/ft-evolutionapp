@@ -12,78 +12,108 @@ class _PostViewState extends State<PostView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        title: Text('Post',
-          style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.white,
+          title: Text(
+            'Post',
+            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
           ),
+          leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back_rounded,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+          centerTitle: true,
         ),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_rounded, color: Colors.black,),
-          onPressed: (){
-            Navigator.pop(context);
-          },
-        ),
-        centerTitle: true,
-      ),
-
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0,20,240,0),
-              child: Text("Title", style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-              ),),
-            ),
-
-            Padding(
-              padding: const EdgeInsets.fromLTRB(48,10,48,0),
-              child: TextFormField(
-                decoration: InputDecoration(
-                    hintText: "Title here",
-                    labelText: "Title",
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    )
-                ),
-              ),
-            ),
-
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0,20,160,0),
-              child: Text("Description", style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-              ),),
-            ),
-
-            Padding(
-              padding: const EdgeInsets.fromLTRB(48,10,48,0),
-              child: TextFormField(
-                decoration: InputDecoration(
-                    hintText: "Description here",
-                    labelText: "Description",
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    )
-                ),
-                maxLines: 10,
-              ),
-            ),
-
-            SizedBox(height: 30,),
-
-            ButtonCustom(sampleText: "Post Announcement", pushNamed: '')
-
-          ],
-        ),
-      ),
-
-    );
+        body: Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Create announcement',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'Montserrat'),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10.0),
+                    child: Column(
+                      children: [
+                        TextFormFieldCustom(
+                            var_hintText: "Sample title",
+                            var_labelText: "Title",
+                            var_keyboardType: TextInputType.text,
+                            var_obscureText: false,
+                            var_suffixIcon: Icons.announcement),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        TextFormFieldCustom(
+                          var_hintText: "Sample description",
+                          var_labelText: "Description",
+                          var_keyboardType: TextInputType.text,
+                          var_obscureText: false,
+                          var_suffixIcon: Icons.description,
+                          var_lines: 5,
+                        ),
+                      ],
+                    ),
+                  ),
+                  ButtonCustom(
+                      sampleText: "Post Announcement",
+                      pushNamed: 'announcement_view')
+                ]))
+        // SingleChildScrollView(
+        //   child: Column(
+        //     children: [
+        //       Text(
+        //         "Title",
+        //         style: TextStyle(
+        //           fontSize: 25,
+        //           fontWeight: FontWeight.bold,
+        //         ),
+        //       ),
+        //       TextFormField(
+        //         decoration: InputDecoration(
+        //             hintText: "Title here",
+        //             labelText: "Title",
+        //             border: OutlineInputBorder(
+        //               borderRadius: BorderRadius.circular(10),
+        //             )),
+        //       ),
+        //       Text(
+        //         "Description",
+        //         style: TextStyle(
+        //           fontSize: 25,
+        //           fontWeight: FontWeight.bold,
+        //         ),
+        //       ),
+        //       TextFormField(
+        //         decoration: InputDecoration(
+        //             hintText: "Write description here",
+        //             labelText: "Description",
+        //             border: OutlineInputBorder(
+        //               borderRadius: BorderRadius.circular(5),
+        //             )),
+        //         maxLines: 8,
+        //       ),
+        //       SizedBox(
+        //         height: 30,
+        //       ),
+        //       ButtonCustom(
+        //           sampleText: "Post Announcement", pushNamed: 'announcement_view')
+        //     ],
+        //   ),
+        // ),
+        );
   }
 }

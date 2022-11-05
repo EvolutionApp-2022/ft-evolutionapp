@@ -6,6 +6,7 @@ class TextFormFieldCustom extends StatelessWidget {
   final TextInputType? var_keyboardType;
   final IconData? var_suffixIcon;
   final bool var_obscureText;
+  final int? var_lines;
 
   const TextFormFieldCustom({
     Key? key,
@@ -14,6 +15,7 @@ class TextFormFieldCustom extends StatelessWidget {
     this.var_keyboardType,
     this.var_suffixIcon,
     required this.var_obscureText,
+    this.var_lines,
   }) : super(key: key);
 
   @override
@@ -29,6 +31,7 @@ class TextFormFieldCustom extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(5)),
           ),
           suffixIcon: Icon(var_suffixIcon)),
+      maxLines: var_lines == null ? 1 : var_lines,
     );
   }
 }
