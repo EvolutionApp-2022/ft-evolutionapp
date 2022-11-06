@@ -21,7 +21,7 @@ class CardButtonCustom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(0),
+      margin: EdgeInsets.only(bottom: 10),
       height: 115,
       decoration: BoxDecoration(
           color: Colors.white,

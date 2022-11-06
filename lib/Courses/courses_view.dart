@@ -10,9 +10,6 @@ class CoursesView extends StatefulWidget {
 }
 
 class _CoursesViewState extends State<CoursesView> {
-
-  //CoursesProvider coursesProvider = new CoursesProvider();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,10 +86,10 @@ class _CoursesViewState extends State<CoursesView> {
               child: FutureBuilder(
                 initialData: [],
                 future: CoursesProvider.getAllCourses(),
-                builder: (context, AsyncSnapshot<List> snapshot){
+                builder: (context, AsyncSnapshot<List> snapshot) {
                   return ListView.builder(
                     itemCount: snapshot.data!.length,
-                    itemBuilder: (context, index){
+                    itemBuilder: (context, index) {
                       var course = snapshot.data![index];
                       return CardButtonCustom(
                           textHeader: course.name.toString(),
@@ -100,79 +97,12 @@ class _CoursesViewState extends State<CoursesView> {
                           customIcon: Icons.arrow_circle_right_rounded,
                           customColor1: Color.fromRGBO(7, 53, 249, 2),
                           customColor2: Color.fromRGBO(6, 174, 234, 2),
-                          pushNamed: 'course_detail_view'
-                      );
+                          pushNamed: 'course_detail_view');
                     },
                   );
                 },
               ),
             ),
-            /*Expanded(
-                child: ListView(children: [
-              CardButtonCustom(
-                  textHeader: 'ALGEBRA',
-                  textContent:
-                      'Lorem Ipsum is simply dummy sample text of the printing.Lorem Ipsum is simply dummy.',
-                  customIcon: Icons.arrow_circle_right_rounded,
-                  customColor1: Color.fromRGBO(7, 53, 249, 2),
-                  customColor2: Color.fromRGBO(6, 174, 234, 2),
-                  pushNamed: 'course_detail_view'),
-              SizedBox(
-                height: 10,
-              ),
-              CardButtonCustom(
-                  textHeader: 'GEOMETRIA',
-                  textContent:
-                      'Lorem Ipsum is simply dummy sample text of the printing.Lorem Ipsum is simply dummy.',
-                  customIcon: Icons.arrow_circle_right_rounded,
-                  customColor1: Color.fromRGBO(7, 53, 249, 2),
-                  customColor2: Color.fromRGBO(6, 174, 234, 2),
-                  pushNamed: 'pushNamed'),
-              SizedBox(
-                height: 10,
-              ),
-              CardButtonCustom(
-                  textHeader: 'ARITMETICA',
-                  textContent:
-                      'Lorem Ipsum is simply dummy sample text of the printing.Lorem Ipsum is simply dummy.',
-                  customIcon: Icons.arrow_circle_right_rounded,
-                  customColor1: Color.fromRGBO(7, 53, 249, 2),
-                  customColor2: Color.fromRGBO(6, 174, 234, 2),
-                  pushNamed: 'pushNamed'),
-              SizedBox(
-                height: 10,
-              ),
-              CardButtonCustom(
-                  textHeader: 'BIOLOGIA',
-                  textContent:
-                      'Lorem Ipsum is simply dummy sample text of the printing.Lorem Ipsum is simply dummy.',
-                  customIcon: Icons.arrow_circle_right_rounded,
-                  customColor1: Color.fromRGBO(7, 53, 249, 2),
-                  customColor2: Color.fromRGBO(6, 174, 234, 2),
-                  pushNamed: 'pushNamed'),
-              SizedBox(
-                height: 10,
-              ),
-              CardButtonCustom(
-                  textHeader: 'LITERATURA',
-                  textContent:
-                      'Lorem Ipsum is simply dummy sample text of the printing.Lorem Ipsum is simply dummy.',
-                  customIcon: Icons.arrow_circle_right_rounded,
-                  customColor1: Color.fromRGBO(7, 53, 249, 2),
-                  customColor2: Color.fromRGBO(6, 174, 234, 2),
-                  pushNamed: 'pushNamed'),
-              SizedBox(
-                height: 10,
-              ),
-              CardButtonCustom(
-                  textHeader: 'TRIGONOMETRIA',
-                  textContent:
-                      'Lorem Ipsum is simply dummy sample text of the printing.Lorem Ipsum is simply dummy.',
-                  customIcon: Icons.arrow_circle_right_rounded,
-                  customColor1: Color.fromRGBO(7, 53, 249, 2),
-                  customColor2: Color.fromRGBO(6, 174, 234, 2),
-                  pushNamed: 'pushNamed'),
-            ]))*/
           ],
         ),
       ),

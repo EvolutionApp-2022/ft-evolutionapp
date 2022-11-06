@@ -1,25 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ft_evolution_app/providers/provider_courses.dart';
 import 'package:ft_evolution_app/routes/app_routes.dart';
-import 'package:provider/provider.dart';
 
 void main() {
-  runApp(AppState());
-}
-
-class AppState extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (_) => CoursesProvider(),
-          lazy: false,
-        )
-      ],
-      child: MyApp(),
-    );
-  }
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
