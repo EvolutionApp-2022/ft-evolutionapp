@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ft_evolution_app/providers/provider_courses.dart';
 import 'package:ft_evolution_app/widgets/widgets.dart';
 
 class CoursesView extends StatefulWidget {
@@ -9,6 +10,9 @@ class CoursesView extends StatefulWidget {
 }
 
 class _CoursesViewState extends State<CoursesView> {
+
+  //CoursesProvider coursesProvider = new CoursesProvider();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,6 +86,28 @@ class _CoursesViewState extends State<CoursesView> {
               height: 15,
             ),
             Expanded(
+              child: FutureBuilder(
+                initialData: [],
+                future: CoursesProvider.getAllCourses(),
+                builder: (context, AsyncSnapshot<List> snapshot){
+                  return ListView.builder(
+                    itemCount: snapshot.data!.length,
+                    itemBuilder: (context, index){
+                      var course = snapshot.data![index];
+                      return CardButtonCustom(
+                          textHeader: course.name.toString(),
+                          textContent: course.description.toString(),
+                          customIcon: Icons.arrow_circle_right_rounded,
+                          customColor1: Color.fromRGBO(7, 53, 249, 2),
+                          customColor2: Color.fromRGBO(6, 174, 234, 2),
+                          pushNamed: 'course_detail_view'
+                      );
+                    },
+                  );
+                },
+              ),
+            ),
+            /*Expanded(
                 child: ListView(children: [
               CardButtonCustom(
                   textHeader: 'ALGEBRA',
@@ -146,7 +172,7 @@ class _CoursesViewState extends State<CoursesView> {
                   customColor1: Color.fromRGBO(7, 53, 249, 2),
                   customColor2: Color.fromRGBO(6, 174, 234, 2),
                   pushNamed: 'pushNamed'),
-            ]))
+            ]))*/
           ],
         ),
       ),
