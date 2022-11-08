@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:ft_evolution_app/models/courses_reponse.dart';
 import 'package:ft_evolution_app/widgets/widgets.dart';
 
 class CourseDetailView extends StatefulWidget {
-  const CourseDetailView({Key? key}) : super(key: key);
+  final course c;
+
+  CourseDetailView(this.c, {Key? key}) : super(key: key);
 
   @override
   State<CourseDetailView> createState() => _CourseDetailViewState();
@@ -41,7 +44,7 @@ class _CourseDetailViewState extends State<CourseDetailView> {
       ),
       body: Container(
         padding: const EdgeInsets.only(left: 35, right: 35),
-        child: Column(children: const [
+        child: Column(children: [
           Padding(
             padding: EdgeInsets.only(top: 10, bottom: 10),
             child: Text(
@@ -54,9 +57,9 @@ class _CourseDetailViewState extends State<CourseDetailView> {
           ),
           Expanded(
             child: CardCustom(
-                title: "ALGEBRA",
+                title: widget.c.name,
                 textContent:
-                    "Incididunt ut cillum dolore cupidatat aliquip non nisi ad.",
+                    widget.c.description,
                     navigationPath: 'section_detail_view',),
           ),
 
@@ -88,5 +91,10 @@ class _CourseDetailViewState extends State<CourseDetailView> {
         ]),
       ),
     );
+  }
+
+  @override
+  void initState() {
+    print("val: ${widget.c.name}");
   }
 }

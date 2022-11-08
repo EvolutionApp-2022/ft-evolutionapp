@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ft_evolution_app/Courses/couse_detail_view.dart';
 import 'package:ft_evolution_app/providers/provider_courses.dart';
+import 'package:ft_evolution_app/widgets/card_buttom_custom_p.dart';
 import 'package:ft_evolution_app/widgets/widgets.dart';
 
 class CoursesView extends StatefulWidget {
@@ -91,13 +93,13 @@ class _CoursesViewState extends State<CoursesView> {
                     itemCount: snapshot.data!.length,
                     itemBuilder: (context, index) {
                       var course = snapshot.data![index];
-                      return CardButtonCustom(
+                      return CardButtonCustomP(
                           textHeader: course.name.toString(),
                           textContent: course.description.toString(),
                           customIcon: Icons.arrow_circle_right_rounded,
                           customColor1: Color.fromRGBO(7, 53, 249, 2),
                           customColor2: Color.fromRGBO(6, 174, 234, 2),
-                          pushNamed: 'course_detail_view');
+                          pushWidget: CourseDetailView(course));
                     },
                   );
                 },
