@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:ft_evolution_app/Announcement/post_view.dart';
+import 'package:ft_evolution_app/providers/provider_announcements.dart';
+import 'package:ft_evolution_app/widgets/button_color_custom_p.dart';
 import 'package:ft_evolution_app/widgets/widgets.dart';
 
 class AnnouncementView extends StatefulWidget {
-  const AnnouncementView({Key? key}) : super(key: key);
+
+  final int sectionId;
+
+  const AnnouncementView(this.sectionId, {Key? key}) : super(key: key);
 
   @override
   State<AnnouncementView> createState() => _AnnouncementViewState();
@@ -57,11 +63,11 @@ class _AnnouncementViewState extends State<AnnouncementView> {
             SizedBox(
               height: 15,
             ),
-            ButtonColorCustom(
+            ButtonColorCustomP(
                 customText: 'Create Announcement',
                 customColor1: Color.fromARGB(255, 255, 81, 0),
                 customColor2: Color.fromARGB(255, 236, 183, 10),
-                pushNamed: 'post_view',
+                pushWidget: PostView(widget.sectionId),
                 addIcon: true,
                 customIcon: Icons.arrow_circle_right_sharp),
             SizedBox(
@@ -81,7 +87,29 @@ class _AnnouncementViewState extends State<AnnouncementView> {
             SizedBox(
               height: 15,
             ),
+
             Expanded(
+              child: FutureBuilder(
+                initialData: [],
+                future: AnnouncementsProvider.getAllAnnouncements(widget.sectionId ),
+                builder: (context, AsyncSnapshot<List> snapshot) {
+                  return ListView.builder(
+                    itemCount: snapshot.data!.length,
+                    itemBuilder: (context, index) {
+                      var announcement = snapshot.data![index];
+                      return CardButtonCustom(
+                          textHeader: announcement.title,
+                          textContent: announcement.description,
+                          customIcon: Icons.announcement,
+                          customColor1: Color.fromARGB(255, 0, 0, 3),
+                          customColor2: Color.fromARGB(255, 121, 121, 121),
+                          pushNamed: 'pushNamed');
+                    },
+                  );
+                },
+              ),
+            ),
+            /*Expanded(
                 child: ListView(children: [
               CardButtonCustom(
                   textHeader: 'Reunion',
@@ -130,7 +158,7 @@ class _AnnouncementViewState extends State<AnnouncementView> {
                   customColor1: Color.fromARGB(255, 0, 0, 3),
                   customColor2: Color.fromARGB(255, 121, 121, 121),
                   pushNamed: 'pushNamed'),
-            ]))
+            ]))*/
           ],
         ),
       ),

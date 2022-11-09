@@ -20,7 +20,6 @@ class Course {
 class listCourses {
   static List<Course> listaCourse(List<dynamic> listaJson) {
     List<Course> listadoCourse = [];
-    // ignore: unnecessary_null_comparison
     if (listaJson != null) {
       for (var item in listaJson) {
         final sample = Course.objJson(item);
