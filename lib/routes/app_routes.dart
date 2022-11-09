@@ -16,7 +16,7 @@ class AppRoutes {
     'dashboardStudent_view': (BuildContext context) =>
         const DashboardStudentView(),
     'coursesStudent_view': (BuildContext context) => const CourseStudentView(),
-    'itemsStudent_view': (BuildContext context) => const ItemStudentView(),
+    //'itemsStudent_view': (BuildContext context) => const ItemStudentView(),
     'profileStudent_view': (BuildContext context) => const ProfileStudentView(),
     'itemStudentDocumentDetail_view': (BuildContext context) =>
         const ItemStudentDocumentDetailView(),

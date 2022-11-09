@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:ft_evolution_app/Items/itemsStudent_view.dart';
 import 'package:ft_evolution_app/Section/section_detail_view.dart';
 import 'package:ft_evolution_app/models/courses_reponse.dart';
 import 'package:ft_evolution_app/providers/provider_sections.dart';
+import 'package:ft_evolution_app/widgets/button_color_custom_p.dart';
 import 'package:ft_evolution_app/widgets/card_buttom_custom_p.dart';
 import 'package:ft_evolution_app/widgets/widgets.dart';
 
@@ -85,13 +87,13 @@ class _CourseDetailViewState extends State<CourseDetailView> {
                   SizedBox(
                     height: 15,
                   ),
-                  ButtonColorCustom(
+                  ButtonColorCustomP(
                       customText: 'Items',
                       customColor1: Color.fromARGB(255, 255, 81, 0),
                       customColor2: Color.fromARGB(255, 236, 183, 10),
                       addIcon: true,
                       customIcon: Icons.arrow_circle_right_sharp,
-                      pushNamed: 'itemsStudent_view'),
+                      pushWidget: ItemStudentView(widget.course.id),),
                   SizedBox(
                     height: 15,
                   ),
