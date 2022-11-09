@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:ft_evolution_app/models/sections_response.dart';
 import 'package:ft_evolution_app/widgets/widgets.dart';
 
 class SectionDetailView extends StatefulWidget {
-  const SectionDetailView({Key? key}) : super(key: key);
+
+  final Section section;
+
+  const SectionDetailView(this.section, {Key? key}) : super(key: key);
 
   @override
   State<SectionDetailView> createState() => _SectionDetailViewState();
@@ -59,7 +63,7 @@ class _SectionDetailViewState extends State<SectionDetailView> {
                     height: 15,
                   ),
                   CardButtonCustom(
-                      textHeader: 'SCA-001',
+                      textHeader: widget.section.name,
                       textContent: 'sample section',
                       customIcon: Icons.aspect_ratio,
                       customColor1: Colors.black,
