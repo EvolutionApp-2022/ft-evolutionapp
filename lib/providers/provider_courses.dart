@@ -5,7 +5,7 @@ import 'dart:convert';
 class CoursesProvider {
   static Future<List<Course>> getAllCourses() async {
     final response =
-        await http.get(Uri.parse("http://10.0.2.2:8080/api/v1/courses"));
+        await http.get(Uri.parse("https://app-bk-evolutionapp-develop-221109111646.azurewebsites.net/api/v1/courses"));
 
     if (response.statusCode == 200) {
       final responseJSON = json.decode(response.body);
