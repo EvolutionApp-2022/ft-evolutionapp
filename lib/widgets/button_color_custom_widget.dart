@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
-class ButtonColorCustom extends StatelessWidget {
+import '../Dashboard/dashboardStudent_view.dart';
+import '../Dashboard/dashboard_view.dart';
+
+class ButtonColorCustomWidget extends StatelessWidget {
   final String customText;
   final String pushNamed;
   final Color customColor1;
@@ -9,7 +12,7 @@ class ButtonColorCustom extends StatelessWidget {
   final bool? addIcon;
   final IconData? customIcon;
 
-  const ButtonColorCustom({
+  const ButtonColorCustomWidget({
     Key? key,
     required this.customText,
     required this.customColor1,
@@ -40,7 +43,10 @@ class ButtonColorCustom extends StatelessWidget {
           foregroundColor: MaterialStateProperty.all(Colors.white),
         ),
         onPressed: () {
-          pushNamed != '' ? Navigator.pushNamed(context, pushNamed) : null;
+          pushNamed != '' ? Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute<Null>(builder:
+              (BuildContext context) =>
+                  pushNamed == 'student' ? const DashboardStudentView() : const DashboardView()),
+                  (Route<dynamic> route) => false): null;
         },
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8),

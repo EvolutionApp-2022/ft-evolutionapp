@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ft_evolution_app/widgets/widgets.dart';
 
+import '../widgets/button_color_custom_widget.dart';
+
 class UserView extends StatelessWidget {
   const UserView({Key? key}) : super(key: key);
 
@@ -46,21 +48,21 @@ class UserView extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Column(
                     children: [
-                      ButtonColorCustom(
+                      ButtonColorCustomWidget(
                         customColor1: Color.fromARGB(255, 25, 0, 255),
                         customColor2: Color.fromARGB(255, 0, 185, 241),
                         customText: 'TEACHER',
-                        pushNamed: 'dashboard_view',
+                        pushNamed: 'teacher',
                         customHigh: 100,
                       ),
                       const SizedBox(
                         height: 8,
                       ),
-                      ButtonColorCustom(
+                      ButtonColorCustomWidget(
                         customColor1: Color.fromARGB(255, 156, 0, 34),
                         customColor2: Color.fromARGB(255, 153, 0, 255),
                         customText: 'STUDENT',
-                        pushNamed: 'dashboardStudent_view',
+                        pushNamed: 'student',
                         customHigh: 100,
                       ),
                       const SizedBox(

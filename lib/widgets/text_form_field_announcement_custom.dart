@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-class TextFormFieldCustom extends StatelessWidget {
+class TextFormFieldAnnouncementCustom extends StatelessWidget {
   final String? var_hintText;
   final String? var_labelText;
   final TextInputType? var_keyboardType;
   final IconData? var_suffixIcon;
   final bool var_obscureText;
   final int? var_lines;
+  final TextEditingController value;
 
-  const TextFormFieldCustom({
+  const TextFormFieldAnnouncementCustom({
     Key? key,
     this.var_hintText,
     this.var_labelText,
@@ -16,11 +17,13 @@ class TextFormFieldCustom extends StatelessWidget {
     this.var_suffixIcon,
     required this.var_obscureText,
     this.var_lines,
+    required this.value,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: value,
       obscureText: var_obscureText,
       keyboardType: var_keyboardType,
       decoration: InputDecoration(

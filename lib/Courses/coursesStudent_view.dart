@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ft_evolution_app/Courses/couse_detail_view.dart';
+import 'package:ft_evolution_app/providers/provider_courses.dart';
+import 'package:ft_evolution_app/widgets/card_buttom_custom_p.dart';
+import 'package:ft_evolution_app/widgets/widgets.dart';
 
 class CourseStudentView extends StatelessWidget {
   const CourseStudentView({Key? key}) : super(key: key);
@@ -6,247 +10,120 @@ class CourseStudentView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        title: Text('Evolution',
-          style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold
-          ),
+        title: Text(
+          'Evolution',
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_rounded, color: Colors.black,),
-          onPressed: (){
+          icon: Icon(
+            Icons.arrow_back_rounded,
+            color: Colors.black,
+          ),
+          onPressed: () {
             Navigator.pop(context);
           },
         ),
         centerTitle: true,
         actions: [
           IconButton(
-              onPressed: (){
+              onPressed: () {
                 Navigator.pushNamed(context, 'profileStudent_view');
               },
-              icon: Icon(Icons.person, color: Colors.black,)
-          )
+              icon: Icon(
+                Icons.person,
+                color: Colors.black,
+              ))
         ],
       ),
-
-      body: Center(
-        child: Container(
-          padding: const EdgeInsets.all(25.0),
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Text('Information',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25
-                  ),
-                ),
-              ),
-
-              SizedBox(
-                height: 5,
-              ),
-
-              Container(
-                height: 60,
-                margin: EdgeInsets.only(
-                  //bottom: 10,
-                  //top: 10,
-                ),
-                padding: EdgeInsets.only(
-                  left: 20,
-                  right: 20,
-                  bottom: 20,
-                  top: 20,
-                ),
-                child: Center(
-                  child: Text('ALGEBRA',
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white
-                    ),
-                  ),
-                ),
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        begin: Alignment.bottomLeft,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          Color.fromRGBO(7, 53, 249, 2),
-                          Color.fromRGBO(6, 174, 234, 2)
-                        ]
-                    ),
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(15),
-                        topRight: Radius.circular(15)
-                    )
-                ),
-              ),
-
-              Container(
-                height: 90,
-                margin: EdgeInsets.only(
-                  bottom: 10,
-                  //top: 10,
-                ),
-                padding: EdgeInsets.only(
-                  left: 20,
-                  right: 20,
-                  bottom: 20,
-                  top: 20,
-                ),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Text('Lorem Ipsum is simply dummy sample text of the printing.',
-                        style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.black
-                        ),
-                      ),
-                    ),
-                    //TODO: Aquí modificar esta sección
-                    IconButton(
-                        onPressed: (){
-                          Navigator.pushNamed(context, 'itemsStudent_view');
+      body: Padding(
+        padding: const EdgeInsets.all(25.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Information',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 30,
+                  fontWeight: FontWeight.w900,
+                  fontFamily: 'Montserrat'),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Expanded(
+                child: FutureBuilder(
+                    initialData: [],
+                    //TODO: Quizá se deba cambiar el endpoint
+                    future: CoursesProvider.getAllCourses(),
+                    builder: (context, AsyncSnapshot<List> snapshot) {
+                      return ListView.builder(
+                        itemCount: snapshot.data!.length,
+                        itemBuilder: (context, index) {
+                          var course = snapshot.data![index];
+                          return CardButtonCustomP(
+                            //TODO: Aca va a cambiar los atributos de la entidad
+                              textHeader: course.name.toString(),
+                              textContent: course.description.toString(),
+                              customIcon: Icons.arrow_circle_right_rounded,
+                              customColor1: Color.fromRGBO(7, 53, 249, 2),
+                              customColor2: Color.fromRGBO(6, 174, 234, 2),
+                              pushWidget: CourseDetailView(course)
+                          );
                         },
-                        icon: Icon(Icons.arrow_circle_right, color: Colors.black, size: 35,)
-                    )
-                  ],
+                      );
+                    },
                 ),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(15),
-                        bottomRight: Radius.circular(15)
-                    ),
-                    border: Border.all(
-                        color: Colors.black
-                    )
-                ),
-              ),
+            ),
 
-              SizedBox(
-                height: 10,
-              ),
+            /*CardButtonCustom(
+              customColor1: Color.fromARGB(255, 25, 0, 255),
+              customColor2: Color.fromARGB(255, 0, 185, 241),
+              customIcon: Icons.remove_red_eye,
+              pushNamed: 'coursesStudent_view',
+              textContent:
+                  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys.',
+              textHeader: 'ALGEBRA',
+            ),*/
 
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Text('Actions',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25
-                  ),
-                ),
-              ),
-
-              SizedBox(
-                height: 5,
-              ),
-
-              Container(
-                height: 65,
-                margin: EdgeInsets.only(
-                    bottom: 10,
-                    //top: 10,
-                    left: 20,
-                    right: 20
-                ),
-                padding: EdgeInsets.only(
-                  left: 20,
-                  right: 20,
-                  bottom: 20,
-                  top: 10,
-                ),
-                child: Row(
-                  children: [
-                    Expanded(
-                      //TODO: Aquí configurar para que se mueva a otra vista
-                      child: Text('Announcements',
-                        style: TextStyle(
-                            fontSize: 22,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold
-                        ),
-                      ),
-                    ),
-                    IconButton(
-                        onPressed: (){},
-                        icon: Icon(Icons.add_circle_outlined, color: Colors.black, size: 35,)
-                    ),
-                  ],
-                ),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: Alignment.bottomLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        Color.fromRGBO(242, 102, 5, 2),
-                        Color.fromRGBO(242, 177, 5, 2)
-                      ]
-                  ),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-              ),
-
-              Container(
-                height: 65,
-                margin: EdgeInsets.only(
-                    bottom: 10,
-                    //top: 10,
-                    left: 20,
-                    right: 20
-                ),
-                padding: EdgeInsets.only(
-                  left: 20,
-                  right: 20,
-                  bottom: 20,
-                  top: 10,
-                ),
-                child: Row(
-                  children: [
-                    Expanded(
-                      //TODO: Aquí configurar para que se mueva a otra vista
-                      child: Text('Items',
-                        style: TextStyle(
-                            fontSize: 22,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold
-                        ),
-                      ),
-                    ),
-                    IconButton(
-                        onPressed: (){},
-                        icon: Icon(Icons.add_circle_outlined, color: Colors.black, size: 35,)
-                    ),
-                  ],
-                ),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: Alignment.bottomLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        Color.fromRGBO(242, 102, 5, 2),
-                        Color.fromRGBO(242, 177, 5, 2)
-                      ]
-                  ),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-              ),
-
-
-            ],
-          ),
+            SizedBox(
+              height: 25,
+            ),
+            Text(
+              'Action',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Montserrat'),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            ButtonColorCustom(
+                customText: 'Announcements',
+                customColor1: Color.fromARGB(255, 255, 81, 0),
+                customColor2: Color.fromARGB(255, 236, 183, 10),
+                pushNamed: '',
+                addIcon: true,
+                customIcon: Icons.arrow_circle_right_sharp),
+            SizedBox(
+              height: 10,
+            ),
+            ButtonColorCustom(
+                customText: 'Items',
+                customColor1: Color.fromARGB(255, 255, 81, 0),
+                customColor2: Color.fromARGB(255, 236, 183, 10),
+                pushNamed: '',
+                addIcon: true,
+                customIcon: Icons.arrow_circle_right_sharp),
+          ],
         ),
       ),
-
     );
   }
 }

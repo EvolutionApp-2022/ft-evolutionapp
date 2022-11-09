@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
-class CardButtonCustom extends StatelessWidget {
+class CardButtonCustomP extends StatelessWidget {
   final String textHeader;
   final String textContent;
   final IconData customIcon;
   final Color customColor1;
   final Color customColor2;
-  final String pushNamed;
+  final Widget pushWidget;
 
-  const CardButtonCustom({
+  const CardButtonCustomP({
     Key? key,
     required this.textHeader,
     required this.textContent,
     required this.customIcon,
     required this.customColor1,
     required this.customColor2,
-    required this.pushNamed,
+    required this.pushWidget,
   }) : super(key: key);
 
   @override
@@ -32,9 +32,10 @@ class CardButtonCustom extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(5))),
       child: TextButton(
         style:
-            ButtonStyle(padding: MaterialStateProperty.all(EdgeInsets.all(0))),
+        ButtonStyle(padding: MaterialStateProperty.all(EdgeInsets.all(0))),
         onPressed: () {
-          pushNamed != '' ? Navigator.pushNamed(context, pushNamed) : null;
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context) => pushWidget));
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -43,7 +44,7 @@ class CardButtonCustom extends StatelessWidget {
                 padding: const EdgeInsets.all(0),
                 child: Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                  const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                   child: Text(
                     textHeader,
                     style: TextStyle(

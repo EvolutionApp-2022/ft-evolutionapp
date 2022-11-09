@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class ButtonColorCustom extends StatelessWidget {
+class ButtonColorCustomP extends StatelessWidget {
   final String customText;
-  final String pushNamed;
+  final Widget pushWidget;
   final Color customColor1;
   final Color customColor2;
   final double? customHigh;
   final bool? addIcon;
   final IconData? customIcon;
 
-  const ButtonColorCustom({
+  const ButtonColorCustomP({
     Key? key,
     required this.customText,
     required this.customColor1,
     required this.customColor2,
-    required this.pushNamed,
+    required this.pushWidget,
     this.customHigh,
     this.customIcon,
     this.addIcon,
@@ -40,7 +40,8 @@ class ButtonColorCustom extends StatelessWidget {
           foregroundColor: MaterialStateProperty.all(Colors.white),
         ),
         onPressed: () {
-          pushNamed != '' ? Navigator.pushNamed(context, pushNamed) : null;
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context) => pushWidget));
         },
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8),

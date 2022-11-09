@@ -197,7 +197,7 @@ class ProfileStudentView extends StatelessWidget {
                     children: const [
                       ButtonCustom(
                         sampleText: 'Log Out',
-                        pushNamed: 'login_view',
+                        pushNamed: 'home_view',
                       ),
                     ],
                   ),

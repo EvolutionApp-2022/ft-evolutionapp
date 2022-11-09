@@ -11,12 +11,12 @@ class AppRoutes {
     'home_view': (BuildContext context) => const HomeView(),
     'sign_view': (BuildContext context) => const SigninView(),
     'login_view': (BuildContext context) => const LoginView(),
-    'announcement_view': (BuildContext context) => const AnnouncementView(),
-    'post_view': (BuildContext context) => const PostView(),
+    //'announcement_view': (BuildContext context) => const AnnouncementView(),
+    //'post_view': (BuildContext context) => const PostView(),
     'dashboardStudent_view': (BuildContext context) =>
         const DashboardStudentView(),
     'coursesStudent_view': (BuildContext context) => const CourseStudentView(),
-    'itemsStudent_view': (BuildContext context) => const ItemStudentView(),
+    //'itemsStudent_view': (BuildContext context) => const ItemStudentView(),
     'profileStudent_view': (BuildContext context) => const ProfileStudentView(),
     'itemStudentDocumentDetail_view': (BuildContext context) =>
         const ItemStudentDocumentDetailView(),
@@ -25,8 +25,8 @@ class AppRoutes {
     'itemTeacher_view': (BuildContext context) => const ItemTeacherView(),
     'itemTeacherPost_view': (BuildContext context) =>
         const ItemTeacherPostView(),
-    'course_detail_view': (BuildContext context) => const CourseDetailView(),
-    'section_detail_view': (BuildContext context) => const SectionDetailView(),
+    //'course_detail_view': (BuildContext context) => const CourseDetailView(),
+    //'section_detail_view': (BuildContext context) => const SectionDetailView(),
     'create_section_view': (BuildContext context) => const CreateSectionView(),
     'user_view': (BuildContext context) => const UserView(),
   };
