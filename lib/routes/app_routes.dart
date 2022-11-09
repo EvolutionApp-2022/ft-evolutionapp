@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ft_evolution_app/models/courses_reponse.dart';
 import 'package:ft_evolution_app/views.dart';
 
 class AppRoutes {
@@ -12,7 +11,7 @@ class AppRoutes {
     'home_view': (BuildContext context) => const HomeView(),
     'sign_view': (BuildContext context) => const SigninView(),
     'login_view': (BuildContext context) => const LoginView(),
-    'announcement_view': (BuildContext context) => const AnnouncementView(),
+    //'announcement_view': (BuildContext context) => const AnnouncementView(),
     'post_view': (BuildContext context) => const PostView(),
     'dashboardStudent_view': (BuildContext context) =>
         const DashboardStudentView(),

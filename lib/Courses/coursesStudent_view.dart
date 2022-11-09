@@ -79,7 +79,7 @@ class CourseStudentView extends StatelessWidget {
                 customText: 'Announcements',
                 customColor1: Color.fromARGB(255, 255, 81, 0),
                 customColor2: Color.fromARGB(255, 236, 183, 10),
-                pushNamed: 'announcement_view',
+                pushNamed: '',
                 addIcon: true,
                 customIcon: Icons.arrow_circle_right_sharp),
             SizedBox(
@@ -89,7 +89,7 @@ class CourseStudentView extends StatelessWidget {
                 customText: 'Items',
                 customColor1: Color.fromARGB(255, 255, 81, 0),
                 customColor2: Color.fromARGB(255, 236, 183, 10),
-                pushNamed: 'itemsStudent_view',
+                pushNamed: '',
                 addIcon: true,
                 customIcon: Icons.arrow_circle_right_sharp),
           ],

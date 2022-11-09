@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ft_evolution_app/Announcement/announcement_view.dart';
 import 'package:ft_evolution_app/models/sections_response.dart';
+import 'package:ft_evolution_app/widgets/button_color_custom_p.dart';
 import 'package:ft_evolution_app/widgets/widgets.dart';
 
 class SectionDetailView extends StatefulWidget {
@@ -83,13 +85,13 @@ class _SectionDetailViewState extends State<SectionDetailView> {
                   SizedBox(
                     height: 15,
                   ),
-                  ButtonColorCustom(
+                  ButtonColorCustomP(
                       customText: 'Announcements',
                       customColor1: Color.fromARGB(255, 255, 81, 0),
                       customColor2: Color.fromARGB(255, 236, 183, 10),
                       addIcon: true,
                       customIcon: Icons.arrow_circle_right_sharp,
-                      pushNamed: ''),
+                      pushWidget: AnnouncementView(widget.section.id)),
                   SizedBox(
                     height: 15,
                   ),

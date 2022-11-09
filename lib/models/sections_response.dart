@@ -17,7 +17,6 @@ class Section {
 class listSections {
   static List<Section> listaSection(List<dynamic> listaJson) {
     List<Section> listadoSection = [];
-    // ignore: unnecessary_null_comparison
     if (listaJson != null) {
       for (var item in listaJson) {
         final sample = Section.objJson(item);
