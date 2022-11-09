@@ -1,5 +1,5 @@
-class course {
-  course({
+class Course {
+  Course({
     required this.id,
     required this.name,
     required this.description,
@@ -9,8 +9,8 @@ class course {
   String name;
   String description;
 
-  static course objJson(Map<String, dynamic> json) {
-    return course(
+  static Course objJson(Map<String, dynamic> json) {
+    return Course(
         id: json['id'] as int,
         name: json['name'] as String,
         description: json['description'] as String);
@@ -18,12 +18,12 @@ class course {
 }
 
 class listCourses {
-  static List<course> listaCourse(List<dynamic> listaJson) {
-    List<course> listadoCourse = [];
+  static List<Course> listaCourse(List<dynamic> listaJson) {
+    List<Course> listadoCourse = [];
     // ignore: unnecessary_null_comparison
     if (listaJson != null) {
       for (var item in listaJson) {
-        final sample = course.objJson(item);
+        final sample = Course.objJson(item);
         listadoCourse.add(sample);
       }
     }

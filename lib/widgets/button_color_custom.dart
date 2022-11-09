@@ -40,7 +40,7 @@ class ButtonColorCustom extends StatelessWidget {
           foregroundColor: MaterialStateProperty.all(Colors.white),
         ),
         onPressed: () {
-          Navigator.pushNamed(context, pushNamed);
+          pushNamed != '' ? Navigator.pushNamed(context, pushNamed) : null;
         },
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8),

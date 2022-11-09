@@ -68,9 +68,6 @@ class _CoursesViewState extends State<CoursesView> {
                 addIcon: true,
                 customIcon: Icons.arrow_circle_right_sharp),
             SizedBox(
-              height: 8,
-            ),
-            SizedBox(
               height: 15,
             ),
             Text(

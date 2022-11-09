@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class CoursesProvider {
-  static Future<List<course>> getAllCourses() async {
+  static Future<List<Course>> getAllCourses() async {
     final response =
         await http.get(Uri.parse("http://10.0.2.2:8080/api/v1/courses"));
 
@@ -12,6 +12,6 @@ class CoursesProvider {
       final allCourses = listCourses.listaCourse(responseJSON);
       return allCourses;
     }
-    return <course>[];
+    return <Course>[];
   }
 }

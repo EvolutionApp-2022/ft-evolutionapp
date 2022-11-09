@@ -34,7 +34,7 @@ class CardButtonCustom extends StatelessWidget {
         style:
             ButtonStyle(padding: MaterialStateProperty.all(EdgeInsets.all(0))),
         onPressed: () {
-          Navigator.pushNamed(context, pushNamed);
+          pushNamed != '' ? Navigator.pushNamed(context, pushNamed) : null;
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
