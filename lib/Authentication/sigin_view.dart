@@ -19,7 +19,7 @@ class SigninView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'Sign In',
+                'Sign Up',
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 40,

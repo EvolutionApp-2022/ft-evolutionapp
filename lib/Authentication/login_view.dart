@@ -80,7 +80,7 @@ class _CustomFormState extends State<CustomForm> {
                           height: 10,
                         ),
                         const ButtonCustom(
-                            sampleText: 'Log In', pushNamed: 'sign_view'),
+                            sampleText: 'Log In', pushNamed: 'user_view'),
                       ],
                     )),
               ],

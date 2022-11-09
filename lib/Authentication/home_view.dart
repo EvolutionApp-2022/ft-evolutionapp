@@ -54,7 +54,7 @@ class HomeView extends StatelessWidget {
                             pushNamed: 'login_view',
                           ),
                           ButtonCustom(
-                            sampleText: 'Sign In',
+                            sampleText: 'Sign Up',
                             pushNamed: 'sign_view',
                           ),
                         ],
