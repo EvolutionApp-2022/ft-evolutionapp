@@ -14,4 +14,26 @@ class AnnouncementsProvider {
     }
     return <Announcement>[];
   }
+
+  static Future<Announcement> postAnnouncement(int sectionId, String title, String description) async {
+    final response =
+    await http.post(
+        Uri.parse("http://10.0.2.2:8080/api/v1/sections/${sectionId}/announcements"),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+      body: jsonEncode(<String, String>{
+        'title': title,
+        'description': description
+      })
+    );
+
+    if (response.statusCode == 200) {
+      final responseJSON = json.decode(response.body);
+      final sample = Announcement.objJson(responseJSON);
+      return sample;
+    }else{
+      throw Exception('Failed to create announcement');
+    }
+  }
 }

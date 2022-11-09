@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ft_evolution_app/Announcement/post_view.dart';
 import 'package:ft_evolution_app/providers/provider_announcements.dart';
+import 'package:ft_evolution_app/widgets/button_color_custom_p.dart';
 import 'package:ft_evolution_app/widgets/widgets.dart';
 
 class AnnouncementView extends StatefulWidget {
@@ -61,11 +63,11 @@ class _AnnouncementViewState extends State<AnnouncementView> {
             SizedBox(
               height: 15,
             ),
-            ButtonColorCustom(
+            ButtonColorCustomP(
                 customText: 'Create Announcement',
                 customColor1: Color.fromARGB(255, 255, 81, 0),
                 customColor2: Color.fromARGB(255, 236, 183, 10),
-                pushNamed: 'post_view',
+                pushWidget: PostView(widget.sectionId),
                 addIcon: true,
                 customIcon: Icons.arrow_circle_right_sharp),
             SizedBox(

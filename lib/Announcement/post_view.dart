@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:ft_evolution_app/widgets/widgets.dart';
+import 'package:ft_evolution_app/providers/provider_announcements.dart';
+import 'package:ft_evolution_app/widgets/text_form_field_announcement_custom.dart';
 
 class PostView extends StatefulWidget {
-  const PostView({Key? key}) : super(key: key);
+  final int sectionId;
+
+  const PostView(this.sectionId, {Key? key}) : super(key: key);
 
   @override
   State<PostView> createState() => _PostViewState();
 }
 
 class _PostViewState extends State<PostView> {
+
+  final title = TextEditingController();
+  final description = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,29 +55,46 @@ class _PostViewState extends State<PostView> {
                     padding: const EdgeInsets.symmetric(vertical: 10.0),
                     child: Column(
                       children: [
-                        TextFormFieldCustom(
+                        TextFormFieldAnnouncementCustom(
                             var_hintText: "Sample title",
                             var_labelText: "Title",
                             var_keyboardType: TextInputType.text,
                             var_obscureText: false,
-                            var_suffixIcon: Icons.announcement),
+                            var_suffixIcon: Icons.announcement,
+                            value: title),
                         const SizedBox(
                           height: 8,
                         ),
-                        TextFormFieldCustom(
+                        TextFormFieldAnnouncementCustom(
                           var_hintText: "Sample description",
                           var_labelText: "Description",
                           var_keyboardType: TextInputType.text,
                           var_obscureText: false,
                           var_suffixIcon: Icons.description,
                           var_lines: 5,
+                          value: description,
                         ),
                       ],
                     ),
                   ),
-                  ButtonCustom(
-                      sampleText: "Post Announcement",
-                      pushNamed: 'announcement_view')
+                  SizedBox(
+                    width: 310,
+                    child: TextButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(Colors.black),
+                        foregroundColor: MaterialStateProperty.all(Colors.white),
+                      ),
+                      onPressed: () {
+                        //Navigator.pushNamed(context, '');
+                        setState(() {
+                          AnnouncementsProvider.postAnnouncement(widget.sectionId, title.text, description.text).then((value) => print(value));
+                        });
+                        //print(title.text);
+                        //print(description.text);
+                      },
+                      child: Text("Post Announcement"),
+                    ),
+                  )
                 ])));
   }
 }

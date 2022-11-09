@@ -12,7 +12,7 @@ class AppRoutes {
     'sign_view': (BuildContext context) => const SigninView(),
     'login_view': (BuildContext context) => const LoginView(),
     //'announcement_view': (BuildContext context) => const AnnouncementView(),
-    'post_view': (BuildContext context) => const PostView(),
+    //'post_view': (BuildContext context) => const PostView(),
     'dashboardStudent_view': (BuildContext context) =>
         const DashboardStudentView(),
     'coursesStudent_view': (BuildContext context) => const CourseStudentView(),
