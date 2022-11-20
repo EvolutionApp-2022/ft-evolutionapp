@@ -18,7 +18,7 @@ class AnnouncementsProvider {
   static Future<Announcement> postAnnouncement(int sectionId, String title, String description) async {
     final response =
     await http.post(
-        Uri.parse("http://10.0.2.2:8080/api/v1/sections/${sectionId}/announcements"),
+        Uri.parse("https://app-bk-evolutionapp-develop-221109111646.azurewebsites.net/api/v1/sections/${sectionId}/announcements"),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },

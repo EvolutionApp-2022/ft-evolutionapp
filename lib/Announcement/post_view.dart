@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ft_evolution_app/Announcement/announcement_view.dart';
 import 'package:ft_evolution_app/providers/provider_announcements.dart';
 import 'package:ft_evolution_app/widgets/text_form_field_announcement_custom.dart';
 
@@ -87,7 +88,14 @@ class _PostViewState extends State<PostView> {
                       onPressed: () {
                         //Navigator.pushNamed(context, '');
                         setState(() {
-                          AnnouncementsProvider.postAnnouncement(widget.sectionId, title.text, description.text).then((value) => print(value));
+                          AnnouncementsProvider.postAnnouncement(widget.sectionId, title.text, description.text).then((value) {
+                              print(value);
+                              title.clear();
+                              description.clear();
+                              Navigator.push(context, MaterialPageRoute(
+                                  builder: (context) => AnnouncementView(widget.sectionId)));
+                            }
+                          );
                         });
                         //print(title.text);
                         //print(description.text);
