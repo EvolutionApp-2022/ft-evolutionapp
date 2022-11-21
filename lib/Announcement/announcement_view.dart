@@ -98,7 +98,7 @@ class _AnnouncementViewState extends State<AnnouncementView> {
                       var announcement = snapshot.data![index];
                       return CardButtonCustom(
                           textHeader: announcement.title,
-                          textContent: announcement.last_name,
+                          textContent: announcement.description,
                           customIcon: Icons.announcement,
                           customColor1: Color.fromARGB(255, 0, 0, 3),
                           customColor2: Color.fromARGB(255, 121, 121, 121),

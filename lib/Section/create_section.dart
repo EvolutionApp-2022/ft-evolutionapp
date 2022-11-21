@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:ft_evolution_app/Courses/courses_view.dart';
 import 'package:ft_evolution_app/models/courses_reponse.dart';
 import 'package:ft_evolution_app/providers/provider_courses.dart';
@@ -18,6 +19,8 @@ class _CreateSectionViewState extends State<CreateSectionView> {
   final name = TextEditingController();
   
   Course courseSelected = Course(id: 0, name: "name", description: "description");
+
+  final storage = new FlutterSecureStorage();
 
   List<dynamic> listItems = [
     /*"Algebra",
@@ -134,10 +137,13 @@ class _CreateSectionViewState extends State<CreateSectionView> {
                       foregroundColor: MaterialStateProperty.all(Colors.white),
                     ),
                   onPressed: () {
-                      SectionsProvider.postSection(courseSelected.id, 1, name.text).then((value) {
-                        name.clear();
-                        Navigator.push(context, MaterialPageRoute(
-                            builder: (context) => CoursesView()));
+                      storage.read(key: 'idUser').then((value) {
+                        print(value);
+                        SectionsProvider.postSection(courseSelected.id, int.parse(value.toString()), name.text).then((value) {
+                          name.clear();
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (context) => CoursesView()));
+                        });
                       });
 
                   },

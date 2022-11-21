@@ -20,7 +20,7 @@ class SectionsProvider {
     final response =
     await http.post(
         Uri.parse(
-            "https://app-bk-evolutionapp-develop-221109111646.azurewebsites.net/api/v1/courses/${courseId}/teachers/${teacherId}/sections"),
+            "http://10.0.2.2:8080/api/v1/courses/${courseId}/teachers/${teacherId}/sections"),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
