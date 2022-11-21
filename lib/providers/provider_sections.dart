@@ -14,4 +14,27 @@ class SectionsProvider {
     }
     return <Section>[];
   }
+
+  static Future<Section> postSection(int courseId, int teacherId, String name) async {
+    final response =
+    await http.post(
+        Uri.parse(
+            "https://app-bk-evolutionapp-develop-221109111646.azurewebsites.net/api/v1/courses/${courseId}/teachers/${teacherId}/sections"),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(<String, String>{
+          'name': name
+        })
+    );
+
+    if (response.statusCode == 200) {
+      final responseJSON = json.decode(response.body);
+      final sample = Section.objJson(responseJSON);
+      return sample;
+    } else {
+      throw Exception('Failed to create Section');
+    }
+  }
 }
+

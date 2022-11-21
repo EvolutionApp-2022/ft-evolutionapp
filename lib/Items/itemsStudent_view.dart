@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ft_evolution_app/Items/itemStudentDocumentDetail_view.dart';
+import 'package:ft_evolution_app/Items/itemStudentVideoDetail_view.dart';
 import 'package:ft_evolution_app/providers/provider_items.dart';
+import 'package:ft_evolution_app/widgets/card_buttom_custom_p.dart';
 import 'package:ft_evolution_app/widgets/card_button_custom.dart';
 
 class ItemStudentView extends StatelessWidget {
@@ -64,13 +67,22 @@ class ItemStudentView extends StatelessWidget {
                       itemCount: snapshot.data!.length,
                       itemBuilder: (context, index) {
                         var item = snapshot.data![index];
-                        return CardButtonCustom(
+                        if(item.name == "VID") {
+                          return CardButtonCustomP(
+                              textHeader: item.name,
+                              textContent: item.description,
+                              customIcon: Icons.file_present_outlined,
+                              customColor1: Color.fromARGB(255, 0, 153, 38),
+                              customColor2: Color.fromARGB(255, 112, 211, 0),
+                              pushWidget: ItemStudentVideoDetailView(item));
+                        }
+                        return CardButtonCustomP(
                             textHeader: item.name,
                             textContent: item.description,
                             customIcon: Icons.file_present_outlined,
                             customColor1: Color.fromARGB(255, 0, 153, 38),
                             customColor2: Color.fromARGB(255, 112, 211, 0),
-                            pushNamed: 'itemStudentDocumentDetail_view');
+                            pushWidget: ItemStudentDocumentDetailView(item));
                       },
                     );
                   },

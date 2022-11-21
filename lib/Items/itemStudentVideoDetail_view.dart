@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ft_evolution_app/models/items_response.dart';
 import 'package:ft_evolution_app/widgets/widgets.dart';
 
 class ItemStudentVideoDetailView extends StatefulWidget {
-  const ItemStudentVideoDetailView({Key? key}) : super(key: key);
+  final Item item;
+  const ItemStudentVideoDetailView(this.item, {Key? key}) : super(key: key);
 
   @override
   State<ItemStudentVideoDetailView> createState() =>
@@ -62,8 +64,8 @@ class _ItemStudentVideoDetailViewState
                 const SizedBox(
                   height: 20,
                 ),
-                const Text(
-                  'Sample Title Item',
+                Text(
+                  "Sample Title Item ${widget.item.name}",
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 20,
@@ -77,6 +79,13 @@ class _ItemStudentVideoDetailViewState
                     width: double.maxFinite,
                   ),
                 ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 15),
+                  child: Text(
+                    widget.item.description,
+                    textAlign: TextAlign.justify,
+                  ),
+                ),
                 const Padding(
                   padding: EdgeInsets.symmetric(vertical: 15),
                   child: Text(
@@ -88,7 +97,7 @@ class _ItemStudentVideoDetailViewState
             ),
             Column(
               children: [
-                Row(
+                /*Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Column(
@@ -112,18 +121,35 @@ class _ItemStudentVideoDetailViewState
                       ],
                     ),
                   ],
-                ),
+                ),*/
                 SizedBox(
                   height: 30,
                 ),
-                ButtonColorCustom(
-                  customText: 'COMPLETED',
-                  customColor1: Color.fromARGB(232, 94, 218, 45),
-                  customColor2: Color.fromARGB(225, 228, 215, 33),
-                  pushNamed: 'pushNamed',
-                  addIcon: true,
-                  customHigh: 60,
-                  customIcon: Icons.check_circle,
+                Container(
+                  margin: EdgeInsets.only(bottom: 10),
+                  height: 40,
+                  width: 200,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(4)),
+                      gradient: LinearGradient(
+                          begin: Alignment.bottomLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color.fromARGB(232, 94, 218, 45),
+                            Color.fromARGB(225, 228, 215, 33),
+                          ])),
+                  child: TextButton(
+                    style: ButtonStyle(padding: MaterialStateProperty.all(EdgeInsets.all(0))),
+                    onPressed: () {
+
+                    },
+                    child: Text("COMPLETED",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15
+                      ),
+                    ),
+                  ),
                 )
               ],
             ),

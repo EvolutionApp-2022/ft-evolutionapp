@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ft_evolution_app/models/items_response.dart';
 import 'package:ft_evolution_app/widgets/widgets.dart';
 
 class ItemStudentDocumentDetailView extends StatefulWidget {
-  const ItemStudentDocumentDetailView({Key? key}) : super(key: key);
+  final Item item;
+  const ItemStudentDocumentDetailView(this.item, {Key? key}) : super(key: key);
 
   @override
   State<ItemStudentDocumentDetailView> createState() =>
@@ -62,18 +64,18 @@ class _ItemStudentDocumentDetailViewState
                 const SizedBox(
                   height: 20,
                 ),
-                const Text(
-                  'Sample Title Item',
+                Text(
+                  "Sample Title Item ${widget.item.name}",
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 20,
                       fontWeight: FontWeight.w500,
                       fontFamily: 'Montserrat'),
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.symmetric(vertical: 10),
                   child: Text(
-                    "Student welcome to the main menu of the application and enjoy learning with the teachers of your educational institution, menu of the application and enjoy learning with the teachers of your educational institution, menu of the application and enjoy learning with the teachers of your educational institution.",
+                    widget.item.description,
                     textAlign: TextAlign.justify,
                   ),
                 ),
@@ -88,7 +90,7 @@ class _ItemStudentDocumentDetailViewState
             ),
             Column(
               children: [
-                Row(
+                /*Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Column(
@@ -112,11 +114,11 @@ class _ItemStudentDocumentDetailViewState
                       ],
                     ),
                   ],
-                ),
+                ),*/
                 SizedBox(
                   height: 30,
                 ),
-                ButtonColorCustom(
+                /*ButtonColorCustom(
                   customText: 'COMPLETED',
                   customColor1: Color.fromARGB(232, 94, 218, 45),
                   customColor2: Color.fromARGB(225, 228, 215, 33),
@@ -124,6 +126,33 @@ class _ItemStudentDocumentDetailViewState
                   addIcon: true,
                   customHigh: 60,
                   customIcon: Icons.check_circle,
+                ),*/
+
+                Container(
+                  margin: EdgeInsets.only(bottom: 10),
+                  height: 40,
+                  width: 200,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(4)),
+                      gradient: LinearGradient(
+                          begin: Alignment.bottomLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color.fromARGB(232, 94, 218, 45),
+                            Color.fromARGB(225, 228, 215, 33),
+                          ])),
+                  child: TextButton(
+                    style: ButtonStyle(padding: MaterialStateProperty.all(EdgeInsets.all(0))),
+                    onPressed: () {
+
+                      },
+                    child: Text("COMPLETED",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15
+                      ),
+                    ),
+                  ),
                 )
               ],
             ),

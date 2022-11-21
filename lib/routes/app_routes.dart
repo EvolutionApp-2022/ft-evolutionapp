@@ -18,10 +18,10 @@ class AppRoutes {
     'coursesStudent_view': (BuildContext context) => const CourseStudentView(),
     //'itemsStudent_view': (BuildContext context) => const ItemStudentView(),
     'profileStudent_view': (BuildContext context) => const ProfileStudentView(),
-    'itemStudentDocumentDetail_view': (BuildContext context) =>
-        const ItemStudentDocumentDetailView(),
-    'itemStudentVideoDetail_view': (BuildContext context) =>
-        const ItemStudentVideoDetailView(),
+    //'itemStudentDocumentDetail_view': (BuildContext context) =>
+        //const ItemStudentDocumentDetailView(),
+    //'itemStudentVideoDetail_view': (BuildContext context) =>
+        //const ItemStudentVideoDetailView(),
     'itemTeacher_view': (BuildContext context) => const ItemTeacherView(),
     'itemTeacherPost_view': (BuildContext context) =>
         const ItemTeacherPostView(),
