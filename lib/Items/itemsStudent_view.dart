@@ -77,7 +77,7 @@ class ItemStudentView extends StatelessWidget {
                         }
                         return CardButtonCustomP(
                             textHeader: item.name,
-                            textContent: item.last_name,
+                            textContent: item.description,
                             customIcon: Icons.file_present_outlined,
                             customColor1: Color.fromARGB(255, 0, 153, 38),
                             customColor2: Color.fromARGB(255, 112, 211, 0),
