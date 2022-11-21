@@ -4,7 +4,7 @@ import 'package:ft_evolution_app/widgets/card_button_custom.dart';
 
 class ItemStudentView extends StatelessWidget {
   final int courseId;
-  const ItemStudentView(this. courseId, {Key? key}) : super(key: key);
+  const ItemStudentView(this.courseId, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +54,6 @@ class ItemStudentView extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-
               Expanded(
                 child: FutureBuilder(
                   initialData: [],
@@ -66,7 +65,7 @@ class ItemStudentView extends StatelessWidget {
                         var item = snapshot.data![index];
                         return CardButtonCustom(
                             textHeader: item.name,
-                            textContent: item.description,
+                            textContent: item.last_name,
                             customIcon: Icons.file_present_outlined,
                             customColor1: Color.fromARGB(255, 0, 153, 38),
                             customColor2: Color.fromARGB(255, 112, 211, 0),

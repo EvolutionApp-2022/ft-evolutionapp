@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:ft_evolution_app/models/user_response.dart';
 import 'package:ft_evolution_app/widgets/widgets.dart';
 
 import '../widgets/button_color_custom_widget.dart';
 
-class UserView extends StatelessWidget {
-  const UserView({Key? key}) : super(key: key);
+class UserView extends StatefulWidget {
+  final User user;
 
+  const UserView(this.user, {Key? key}) : super(key: key);
+
+  @override
+  State<UserView> createState() => _UserViewState();
+}
+
+class _UserViewState extends State<UserView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,6 +56,42 @@ class UserView extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Column(
                     children: [
+                      TextButton(
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.black),
+                          foregroundColor:
+                              MaterialStateProperty.all(Colors.white),
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            final storage = new FlutterSecureStorage();
+                            AuthProvider.validateUser(email.text, password.text)
+                                .then((value) {
+                              if (value) {
+                                Future<String?> sample2 =
+                                    storage.read(key: 'typeUser');
+                                sample2.then((value) => Navigator.of(context)
+                                        .pushAndRemoveUntil(
+                                            MaterialPageRoute<Null>(
+                                                builder: (BuildContext
+                                                        context) =>
+                                                    value == 'Student'
+                                                        ? const DashboardStudentView()
+                                                        : const DashboardView()),
+                                            (Route<dynamic> route) => false)
+
+                                    // Navigator.pushNamed(
+                                    //     context, "dashboard${value}_view")
+
+                                    );
+                                ;
+                              }
+                            });
+                          });
+                        },
+                        child: Text("Log in"),
+                      ),
                       ButtonColorCustomWidget(
                         customColor1: Color.fromARGB(255, 25, 0, 255),
                         customColor2: Color.fromARGB(255, 0, 185, 241),

@@ -68,7 +68,7 @@ class CourseStudentView extends StatelessWidget {
                       return CardButtonCustomP(
                           //TODO: Aca va a cambiar los atributos de la entidad
                           textHeader: course.name.toString(),
-                          textContent: course.description.toString(),
+                          textContent: course.last_name.toString(),
                           customIcon: Icons.arrow_circle_right_rounded,
                           customColor1: Color.fromRGBO(7, 53, 249, 2),
                           customColor2: Color.fromRGBO(6, 174, 234, 2),
