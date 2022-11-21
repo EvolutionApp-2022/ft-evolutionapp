@@ -6,7 +6,7 @@ class AppRoutes {
 
   static Map<String, Widget Function(BuildContext)> routes = {
     'profile_view': (BuildContext context) => const ProfileView(),
-    'dashboard_view': (BuildContext context) => const DashboardView(),
+    'dashboardTeacher_view': (BuildContext context) => const DashboardView(),
     'courses_view': (BuildContext context) => const CoursesView(),
     'home_view': (BuildContext context) => const HomeView(),
     'sign_view': (BuildContext context) => const SigninView(),
@@ -28,6 +28,6 @@ class AppRoutes {
     //'course_detail_view': (BuildContext context) => const CourseDetailView(),
     //'section_detail_view': (BuildContext context) => const SectionDetailView(),
     'create_section_view': (BuildContext context) => const CreateSectionView(),
-    'user_view': (BuildContext context) => const UserView(),
+    //'user_view': (BuildContext context) => const UserView(),
   };
 }

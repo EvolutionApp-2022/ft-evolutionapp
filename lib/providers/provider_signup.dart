@@ -1,0 +1,45 @@
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
+class RegisterProvider {
+  static Future<bool> registerTeacher(String name, String last_name, String email, String password) async {
+
+    final urlTeacher =
+    Uri.parse("http://10.0.2.2:8080/api/v1/teachers/auth/sign-up");
+
+    final responseStudent = await http.post(urlTeacher,
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(<String, String>{
+          'name': name,
+          'last_name': last_name,
+          'email': email,
+          'password': password
+        }));
+
+    if (responseStudent.statusCode == 200) return true;
+    return false;
+  }
+
+  static Future<bool> registerStudent(String name, String last_name, String email, String password) async {
+
+    final urlStudent =
+    Uri.parse("http://10.0.2.2:8080/api/v1/students/auth/sign-up");
+
+    final responseStudent = await http.post(urlStudent,
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(<String, dynamic>{
+          'name': name,
+          'last_name': last_name,
+          'email': email,
+          'point': 0,
+          'password': password
+        }));
+
+    if (responseStudent.statusCode == 200) return true;
+    return false;
+  }
+}
