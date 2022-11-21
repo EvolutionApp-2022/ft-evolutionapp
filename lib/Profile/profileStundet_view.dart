@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:ft_evolution_app/models/user_response.dart';
+import 'package:ft_evolution_app/providers/provider_login.dart';
 import '../widgets/widgets.dart';
 
-class ProfileStudentView extends StatelessWidget {
+class ProfileStudentView extends StatefulWidget {
   const ProfileStudentView({Key? key}) : super(key: key);
 
   @override
+  State<ProfileStudentView> createState() => _ProfileStudentViewState();
+}
+
+class _ProfileStudentViewState extends State<ProfileStudentView> {
+
+  final storage = new FlutterSecureStorage();
+
+  Student student = Student(id: 0, name: "name", last_name: "last_name", email: "email", point: 0);
+  @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -38,6 +51,19 @@ class ProfileStudentView extends StatelessWidget {
           padding: const EdgeInsets.all(25.0),
           child: Column(
             children: [
+              TextButton(
+                onPressed: () {
+                    setState(() {
+                      storage.read(key: "idUser").then((value) =>
+                        AuthProvider.getStudentById(int.parse(value.toString())).then((value) => student = value)
+                      );
+                  });
+                },
+                child: Text("eee",
+                  style: TextStyle(color: Colors.white),
+                )
+              ),
+
               Container(
                 child: Image(
                   image: AssetImage('assets/img/profile_f.png'),
@@ -72,14 +98,14 @@ class ProfileStudentView extends StatelessWidget {
                           Expanded(
                             //TODO: Modificar la info
                             child: Text(
-                              'Name: ' + 'Name of the student',
+                              "Name: ${student.name}",
                               style:
                                   TextStyle(fontSize: 18, color: Colors.black),
                             ),
                           ),
                           Expanded(
                             child: Text(
-                              'Last Name: ' + 'Last name of the student',
+                              "Last Name: ${student.last_name}",
                               style: TextStyle(
                                 fontSize: 18,
                                 color: Colors.black,
@@ -88,7 +114,7 @@ class ProfileStudentView extends StatelessWidget {
                           ),
                           Expanded(
                             child: Text(
-                              'Email: ' + 'Email of the student',
+                              "Email: ${student.email}",
                               style: TextStyle(
                                 fontSize: 18,
                                 color: Colors.black,
@@ -116,7 +142,7 @@ class ProfileStudentView extends StatelessWidget {
                   text: TextSpan(
                     children: <TextSpan>[
                       TextSpan(
-                        text: '100',
+                        text: student.point.toString(),
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
