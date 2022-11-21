@@ -56,6 +56,7 @@ class _UserViewState extends State<UserView> {
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Column(
                     children: [
+                      //TODO: este boton es para hacer post SOLO para teacher
                       TextButton(
                         style: ButtonStyle(
                           backgroundColor:
@@ -65,32 +66,11 @@ class _UserViewState extends State<UserView> {
                         ),
                         onPressed: () {
                           setState(() {
-                            final storage = new FlutterSecureStorage();
-                            AuthProvider.validateUser(email.text, password.text)
-                                .then((value) {
-                              if (value) {
-                                Future<String?> sample2 =
-                                    storage.read(key: 'typeUser');
-                                sample2.then((value) => Navigator.of(context)
-                                        .pushAndRemoveUntil(
-                                            MaterialPageRoute<Null>(
-                                                builder: (BuildContext
-                                                        context) =>
-                                                    value == 'Student'
-                                                        ? const DashboardStudentView()
-                                                        : const DashboardView()),
-                                            (Route<dynamic> route) => false)
-
-                                    // Navigator.pushNamed(
-                                    //     context, "dashboard${value}_view")
-
-                                    );
-                                ;
-                              }
-                            });
+                            //TODO: crear provider y validar que cuando status 200 (creado correctaemtnet) mandar a login
+                            // AuthProvider.validateUser(email.text, password.text)
                           });
                         },
-                        child: Text("Log in"),
+                        child: Text("TEACHER"),
                       ),
                       ButtonColorCustomWidget(
                         customColor1: Color.fromARGB(255, 25, 0, 255),
