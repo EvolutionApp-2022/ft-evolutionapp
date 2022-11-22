@@ -93,7 +93,7 @@ class _DashboardStudentView extends State<DashboardStudentView> {
               height: 15,
             ),
             Text(
-              'Courses',
+              'Recently viewed',
               style: TextStyle(
                   color: Colors.black,
                   fontSize: 20,
@@ -107,19 +107,16 @@ class _DashboardStudentView extends State<DashboardStudentView> {
               customColor1: Color.fromARGB(255, 25, 0, 255),
               customColor2: Color.fromARGB(255, 0, 185, 241),
               customIcon: Icons.remove_red_eye,
-              pushNamed: 'coursesStudent_view',
+              pushNamed: '',
               textContent:
                   'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys.',
               textHeader: 'ALGEBRA',
-            ),
-            SizedBox(
-              height: 15,
             ),
             CardButtonCustom(
               customColor1: Color.fromARGB(255, 25, 0, 255),
               customColor2: Color.fromARGB(255, 0, 185, 241),
               customIcon: Icons.remove_red_eye,
-              pushNamed: 'coursesStudent_view',
+              pushNamed: '',
               textContent:
                   'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys.',
               textHeader: 'ARITMETICA',

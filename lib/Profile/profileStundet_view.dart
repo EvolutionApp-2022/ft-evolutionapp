@@ -45,155 +45,139 @@ class _ProfileStudentViewState extends State<ProfileStudentView> {
               ))
         ],
       ),
-      body: Center(
-        child: Container(
-          padding: const EdgeInsets.all(25.0),
-          child: Column(
-            children: [
-              TextButton(
-                style: ButtonStyle(
-                  splashFactory: NoSplash.splashFactory,
-                  overlayColor: MaterialStateProperty.all(Colors.white),
-                ),
-                onPressed: () {
-                  setState(() {
-                    storage.read(key: "idUser").then((value) =>
-                        AuthProvider.getStudentById(int.parse(value.toString()))
-                            .then((value) => student = value));
-                  });
+      body: Container(
+        padding: const EdgeInsets.all(25.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            TextButton(
+              style: ButtonStyle(
+                splashFactory: NoSplash.splashFactory,
+                overlayColor: MaterialStateProperty.all(Colors.white),
+              ),
+              onPressed: () {
+                setState(() {
+                  storage.read(key: "idUser").then((value) =>
+                      AuthProvider.getStudentById(int.parse(value.toString()))
+                          .then((value) => student = value));
+                });
+              },
+              child: CircleAvatar(
+                backgroundImage: const AssetImage('assets/img/profile_f.png'),
+                radius: 100,
+                onBackgroundImageError: (e, s) {
+                  debugPrint('There is a problem in the image: $e, $s');
                 },
-                child: CircleAvatar(
-                  backgroundImage: const AssetImage('assets/img/profile_m.png'),
-                  radius: 100,
-                  onBackgroundImageError: (e, s) {
-                    debugPrint('There is a problem in the image: $e, $s');
-                  },
-                ),
               ),
-              Container(
-                child: Image(
-                  image: AssetImage('assets/img/profile_f.png'),
-                  width: 250,
-                ),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            RichText(
+              text: TextSpan(
+                children: <TextSpan>[
+                  TextSpan(
+                    text: 'Student',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 40.0,
+                    ),
+                  ),
+                ],
               ),
-              SizedBox(
-                height: 15,
+            ),
+            Container(
+              height: 140,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    height: 90,
+                    child: Column(
+                      children: [
+                        Expanded(
+                          //TODO: Modificar la info
+                          child: Text(
+                            "Name: ${student.name}",
+                            style: TextStyle(fontSize: 18, color: Colors.black),
+                          ),
+                        ),
+                        Expanded(
+                          child: Text(
+                            "Last Name: ${student.last_name}",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Text(
+                            "Email: ${student.email}",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
-              RichText(
+            ),
+            Padding(
+              padding: const EdgeInsets.all(0.0),
+              child: RichText(
                 text: TextSpan(
                   children: <TextSpan>[
                     TextSpan(
-                      text: 'Student',
+                      text: student.point.toString(),
                       style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 40.0,
+                        fontSize: 50.0,
                       ),
                     ),
                   ],
                 ),
               ),
-              Container(
-                height: 140,
-                child: Row(
-                  children: [
-                    Container(
-                      height: 90,
-                      child: Column(
-                        children: [
-                          Expanded(
-                            //TODO: Modificar la info
-                            child: Text(
-                              "Name: ${student.name}",
-                              style:
-                                  TextStyle(fontSize: 18, color: Colors.black),
-                            ),
-                          ),
-                          Expanded(
-                            child: Text(
-                              "Last Name: ${student.last_name}",
-                              style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: Text(
-                              "Email: ${student.email}",
-                              style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: Text(
-                              'School: ' + 'School where Raaaa',
-                              style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(0.0),
+              child: RichText(
+                text: TextSpan(
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: 'Points',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20.0,
                       ),
                     ),
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(0.0),
-                child: RichText(
-                  text: TextSpan(
-                    children: <TextSpan>[
-                      TextSpan(
-                        text: student.point.toString(),
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 50.0,
-                        ),
-                      ),
-                    ],
-                  ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  children: const [
+                    ButtonCustom(
+                      sampleText: 'Log Out',
+                      pushNamed: 'home_view',
+                    ),
+                  ],
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(0.0),
-                child: RichText(
-                  text: TextSpan(
-                    children: <TextSpan>[
-                      TextSpan(
-                        text: 'Points',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20.0,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Column(
-                    children: const [
-                      ButtonCustom(
-                        sampleText: 'Log Out',
-                        pushNamed: 'home_view',
-                      ),
-                    ],
-                  ),
-                ],
-              )
-            ],
-          ),
+              ],
+            )
+          ],
         ),
       ),
     );
