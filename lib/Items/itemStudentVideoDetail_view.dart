@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ft_evolution_app/models/items_response.dart';
 import 'package:ft_evolution_app/widgets/widgets.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class ItemStudentVideoDetailView extends StatefulWidget {
   final Item item;
@@ -13,6 +14,22 @@ class ItemStudentVideoDetailView extends StatefulWidget {
 
 class _ItemStudentVideoDetailViewState
     extends State<ItemStudentVideoDetailView> {
+  late YoutubePlayerController _controller;
+
+  ItemStudentVideoDetailView get getWidget => widget;
+
+  @override
+  void initState() {
+    final String urlVideo = getWidget.item.description;
+    final videoID = YoutubePlayer.convertUrlToId(urlVideo);
+
+    _controller = YoutubePlayerController(
+        initialVideoId: videoID!,
+        flags: const YoutubePlayerFlags(autoPlay: false));
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,19 +90,11 @@ class _ItemStudentVideoDetailViewState
                       fontFamily: 'Montserrat'),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: Image(
-                    image: AssetImage('assets/img/videoImage.png'),
-                    width: double.maxFinite,
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 15),
-                  child: Text(
-                    widget.item.description,
-                    textAlign: TextAlign.justify,
-                  ),
-                ),
+                    padding: const EdgeInsets.only(top: 10),
+                    child: YoutubePlayer(
+                      controller: _controller,
+                      showVideoProgressIndicator: true,
+                    )),
                 const Padding(
                   padding: EdgeInsets.symmetric(vertical: 15),
                   child: Text(
@@ -97,7 +106,7 @@ class _ItemStudentVideoDetailViewState
             ),
             Column(
               children: [
-                /*Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Column(
@@ -121,7 +130,7 @@ class _ItemStudentVideoDetailViewState
                       ],
                     ),
                   ],
-                ),*/
+                ),
                 SizedBox(
                   height: 30,
                 ),
@@ -139,15 +148,12 @@ class _ItemStudentVideoDetailViewState
                             Color.fromARGB(225, 228, 215, 33),
                           ])),
                   child: TextButton(
-                    style: ButtonStyle(padding: MaterialStateProperty.all(EdgeInsets.all(0))),
-                    onPressed: () {
-
-                    },
-                    child: Text("COMPLETED",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15
-                      ),
+                    style: ButtonStyle(
+                        padding: MaterialStateProperty.all(EdgeInsets.all(0))),
+                    onPressed: () {},
+                    child: Text(
+                      "COMPLETED",
+                      style: TextStyle(color: Colors.white, fontSize: 15),
                     ),
                   ),
                 )
