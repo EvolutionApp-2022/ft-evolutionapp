@@ -40,7 +40,7 @@ class HomeView extends StatelessWidget {
                         fontFamily: 'Montserrat'),
                   ),
                   const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10),
+                    padding: EdgeInsets.symmetric(vertical: 20),
                     child: Text(
                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown."),
                   ),
@@ -50,11 +50,14 @@ class HomeView extends StatelessWidget {
                       Column(
                         children: const [
                           ButtonCustom(
-                            sampleText: 'Log In',
+                            sampleText: 'LOG IN',
                             pushNamed: 'login_view',
                           ),
+                          SizedBox(
+                            height: 10,
+                          ),
                           ButtonCustom(
-                            sampleText: 'Sign Up',
+                            sampleText: 'SIGN UP',
                             pushNamed: 'sign_view',
                           ),
                         ],

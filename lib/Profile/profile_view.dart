@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:ft_evolution_app/models/user_response.dart';
+import 'package:ft_evolution_app/providers/provider_login.dart';
 import 'package:ft_evolution_app/widgets/widgets.dart';
 
 class ProfileView extends StatefulWidget {
@@ -9,6 +12,15 @@ class ProfileView extends StatefulWidget {
 }
 
 class _ProfileViewState extends State<ProfileView> {
+  final storage = new FlutterSecureStorage();
+
+  var future = new Future.delayed(
+    const Duration(milliseconds: 10),
+  );
+
+  Teacher teacher =
+      Teacher(id: 0, name: "name", last_name: "last_name", email: "email");
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,13 +45,33 @@ class _ProfileViewState extends State<ProfileView> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          CircleAvatar(
-            backgroundImage: const AssetImage('assets/img/profile_m.png'),
-            radius: 100,
-            onBackgroundImageError: (e, s) {
-              debugPrint('There is a problem in the image: $e, $s');
+          TextButton(
+            style: ButtonStyle(
+              splashFactory: NoSplash.splashFactory,
+              overlayColor: MaterialStateProperty.all(Colors.white),
+            ),
+            onPressed: () {
+              setState(() {
+                storage.read(key: "idUser").then((value) =>
+                    AuthProvider.getTeacherById(int.parse(value.toString()))
+                        .then((value) => teacher = value));
+              });
             },
+            child: CircleAvatar(
+              backgroundImage: const AssetImage('assets/img/profile_m.png'),
+              radius: 100,
+              onBackgroundImageError: (e, s) {
+                debugPrint('There is a problem in the image: $e, $s');
+              },
+            ),
           ),
+          // CircleAvatar(
+          //   backgroundImage: const AssetImage('assets/img/profile_m.png'),
+          //   radius: 100,
+          //   onBackgroundImageError: (e, s) {
+          //     debugPrint('There is a problem in the image: $e, $s');
+          //   },
+          // ),
           const Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
@@ -51,13 +83,13 @@ class _ProfileViewState extends State<ProfileView> {
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   Text(
                     'Name: ',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    'Jorge Patricio',
+                    teacher.name,
                     style: TextStyle(
                       fontSize: 20,
                     ),
@@ -66,13 +98,13 @@ class _ProfileViewState extends State<ProfileView> {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   Text(
                     'Lastname: ',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    'Mendez Aguilar',
+                    teacher.last_name,
                     style: TextStyle(
                       fontSize: 20,
                     ),
@@ -81,13 +113,13 @@ class _ProfileViewState extends State<ProfileView> {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   Text(
                     'Email: ',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    'jorge258@gmail.com',
+                    teacher.email,
                     style: TextStyle(
                       fontSize: 20,
                     ),
