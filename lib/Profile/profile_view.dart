@@ -12,14 +12,17 @@ class ProfileView extends StatefulWidget {
 }
 
 class _ProfileViewState extends State<ProfileView> {
-
   final storage = new FlutterSecureStorage();
 
-  Teacher teacher = Teacher(id: 0, name: "name", last_name: "last_name", email: "email");
+  var future = new Future.delayed(
+    const Duration(milliseconds: 10),
+  );
+
+  Teacher teacher =
+      Teacher(id: 0, name: "name", last_name: "last_name", email: "email");
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -43,24 +46,32 @@ class _ProfileViewState extends State<ProfileView> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           TextButton(
-              onPressed: () {
-                setState(() {
-                  storage.read(key: "idUser").then((value) =>
-                      AuthProvider.getTeacherById(int.parse(value.toString())).then((value) => teacher = value)
-                  );
-                });
-              },
-              child: Text("eee",
-                style: TextStyle(color: Colors.white),
-              )
-          ),
-          CircleAvatar(
-            backgroundImage: const AssetImage('assets/img/profile_m.png'),
-            radius: 100,
-            onBackgroundImageError: (e, s) {
-              debugPrint('There is a problem in the image: $e, $s');
+            style: ButtonStyle(
+              splashFactory: NoSplash.splashFactory,
+              overlayColor: MaterialStateProperty.all(Colors.white),
+            ),
+            onPressed: () {
+              setState(() {
+                storage.read(key: "idUser").then((value) =>
+                    AuthProvider.getTeacherById(int.parse(value.toString()))
+                        .then((value) => teacher = value));
+              });
             },
+            child: CircleAvatar(
+              backgroundImage: const AssetImage('assets/img/profile_m.png'),
+              radius: 100,
+              onBackgroundImageError: (e, s) {
+                debugPrint('There is a problem in the image: $e, $s');
+              },
+            ),
           ),
+          // CircleAvatar(
+          //   backgroundImage: const AssetImage('assets/img/profile_m.png'),
+          //   radius: 100,
+          //   onBackgroundImageError: (e, s) {
+          //     debugPrint('There is a problem in the image: $e, $s');
+          //   },
+          // ),
           const Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
