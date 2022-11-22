@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ft_evolution_app/Courses/couse_detail_view.dart';
 import 'package:ft_evolution_app/providers/provider_courses.dart';
+import 'package:ft_evolution_app/views.dart';
 import 'package:ft_evolution_app/widgets/card_buttom_custom_p.dart';
 import 'package:ft_evolution_app/widgets/widgets.dart';
 
@@ -72,7 +73,7 @@ class CourseStudentView extends StatelessWidget {
                           customIcon: Icons.arrow_circle_right_rounded,
                           customColor1: Color.fromRGBO(7, 53, 249, 2),
                           customColor2: Color.fromRGBO(6, 174, 234, 2),
-                          pushWidget: CourseDetailView(course));
+                          pushWidget: CourseDetailStudentView(course));
                     },
                   );
                 },

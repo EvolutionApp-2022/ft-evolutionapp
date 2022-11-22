@@ -4,16 +4,17 @@ import 'package:ft_evolution_app/providers/provider_announcements.dart';
 import 'package:ft_evolution_app/widgets/button_color_custom_p.dart';
 import 'package:ft_evolution_app/widgets/widgets.dart';
 
-class AnnouncementView extends StatefulWidget {
+class AnnouncementStudentView extends StatefulWidget {
   final int sectionId;
 
-  const AnnouncementView(this.sectionId, {Key? key}) : super(key: key);
+  const AnnouncementStudentView(this.sectionId, {Key? key}) : super(key: key);
 
   @override
-  State<AnnouncementView> createState() => _AnnouncementViewState();
+  State<AnnouncementStudentView> createState() =>
+      _AnnouncementStudentViewState();
 }
 
-class _AnnouncementViewState extends State<AnnouncementView> {
+class _AnnouncementStudentViewState extends State<AnnouncementStudentView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,30 +52,6 @@ class _AnnouncementViewState extends State<AnnouncementView> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Action',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500,
-                  fontFamily: 'Montserrat'),
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            ButtonColorCustomP(
-                customText: 'Create Announcement',
-                customColor1: Color.fromARGB(255, 255, 81, 0),
-                customColor2: Color.fromARGB(255, 236, 183, 10),
-                pushWidget: PostView(widget.sectionId),
-                addIcon: true,
-                customIcon: Icons.arrow_circle_right_sharp),
-            SizedBox(
-              height: 8,
-            ),
-            SizedBox(
-              height: 15,
-            ),
             Text(
               'Announcements',
               style: TextStyle(

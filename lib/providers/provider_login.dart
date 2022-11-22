@@ -7,10 +7,10 @@ class AuthProvider {
   static Future<bool> validateUser(String email, String password) async {
     final storage = new FlutterSecureStorage();
 
-    final urlTeacher =
-        Uri.parse("http://10.0.2.2:8080/api/v1/teachers/auth/sign-in");
-    final urlStudent =
-        Uri.parse("http://10.0.2.2:8080/api/v1/students/auth/sign-in");
+    final urlTeacher = Uri.parse(
+        "http://ec2-3-92-202-108.compute-1.amazonaws.com:8080/api/v1/teachers/auth/sign-in");
+    final urlStudent = Uri.parse(
+        "http://ec2-3-92-202-108.compute-1.amazonaws.com:8080/api/v1/students/auth/sign-in");
 
     final responseStudent = await http.post(urlStudent,
         headers: <String, String>{
@@ -51,8 +51,8 @@ class AuthProvider {
   }
 
   static Future<Teacher> getTeacherById(int teacherId) async {
-
-    final response = await http.get(Uri.parse("http://10.0.2.2:8080/api/v1/teachers/${teacherId}"));
+    final response = await http.get(Uri.parse(
+        "http://ec2-3-92-202-108.compute-1.amazonaws.com:8080/api/v1/teachers/${teacherId}"));
 
     if (response.statusCode == 200) {
       final responseJSON = json.decode(response.body);
@@ -63,8 +63,8 @@ class AuthProvider {
   }
 
   static Future<Student> getStudentById(int studentId) async {
-
-    final response = await http.get(Uri.parse("http://10.0.2.2:8080/api/v1/students/${studentId}"));
+    final response = await http.get(Uri.parse(
+        "http://ec2-3-92-202-108.compute-1.amazonaws.com:8080/api/v1/students/${studentId}"));
 
     if (response.statusCode == 200) {
       final responseJSON = json.decode(response.body);
