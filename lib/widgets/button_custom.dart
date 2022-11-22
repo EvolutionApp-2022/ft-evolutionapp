@@ -13,6 +13,7 @@ class ButtonCustom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+      height: 45,
       width: 310,
       child: TextButton(
         style: ButtonStyle(
@@ -22,7 +23,10 @@ class ButtonCustom extends StatelessWidget {
         onPressed: () {
           Navigator.pushNamed(context, pushNamed);
         },
-        child: Text(sampleText),
+        child: Text(
+          sampleText,
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
       ),
     );
   }
