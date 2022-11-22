@@ -12,13 +12,12 @@ class ProfileStudentView extends StatefulWidget {
 }
 
 class _ProfileStudentViewState extends State<ProfileStudentView> {
-
   final storage = new FlutterSecureStorage();
 
-  Student student = Student(id: 0, name: "name", last_name: "last_name", email: "email", point: 0);
+  Student student = Student(
+      id: 0, name: "name", last_name: "last_name", email: "email", point: 0);
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -52,18 +51,25 @@ class _ProfileStudentViewState extends State<ProfileStudentView> {
           child: Column(
             children: [
               TextButton(
+                style: ButtonStyle(
+                  splashFactory: NoSplash.splashFactory,
+                  overlayColor: MaterialStateProperty.all(Colors.white),
+                ),
                 onPressed: () {
-                    setState(() {
-                      storage.read(key: "idUser").then((value) =>
-                        AuthProvider.getStudentById(int.parse(value.toString())).then((value) => student = value)
-                      );
+                  setState(() {
+                    storage.read(key: "idUser").then((value) =>
+                        AuthProvider.getStudentById(int.parse(value.toString()))
+                            .then((value) => student = value));
                   });
                 },
-                child: Text("eee",
-                  style: TextStyle(color: Colors.white),
-                )
+                child: CircleAvatar(
+                  backgroundImage: const AssetImage('assets/img/profile_m.png'),
+                  radius: 100,
+                  onBackgroundImageError: (e, s) {
+                    debugPrint('There is a problem in the image: $e, $s');
+                  },
+                ),
               ),
-
               Container(
                 child: Image(
                   image: AssetImage('assets/img/profile_f.png'),
