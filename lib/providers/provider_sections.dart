@@ -6,7 +6,7 @@ class SectionsProvider {
   static Future<List<Section>> getAllSections(
       int courseId, int teacherId) async {
     final response = await http.get(Uri.parse(
-        "http://ec2-3-92-202-108.compute-1.amazonaws.com:8080/api/v1/courses/${courseId}/teachers/${teacherId}/sections"));
+        "http://ec2-35-175-138-230.compute-1.amazonaws.com:8090/api/v1/courses/${courseId}/teachers/${teacherId}/sections"));
 
     if (response.statusCode == 200) {
       final responseJSON = json.decode(response.body);
@@ -20,7 +20,7 @@ class SectionsProvider {
       int courseId, int teacherId, String name) async {
     final response = await http.post(
         Uri.parse(
-            "http://ec2-3-92-202-108.compute-1.amazonaws.com:8080/api/v1/courses/${courseId}/teachers/${teacherId}/sections"),
+            "http://ec2-35-175-138-230.compute-1.amazonaws.com:8090/api/v1/courses/${courseId}/teachers/${teacherId}/sections"),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
