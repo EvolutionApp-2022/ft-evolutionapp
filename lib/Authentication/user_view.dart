@@ -58,45 +58,92 @@ class _UserViewState extends State<UserView> {
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Column(
                     children: [
-                      TextButton(
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.black),
-                          foregroundColor:
-                              MaterialStateProperty.all(Colors.white),
+                      Container(
+                        width: double.maxFinite,
+                        height: 80,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          gradient: LinearGradient(
+                              begin: Alignment.bottomLeft,
+                              end: Alignment.bottomRight,
+                              colors: [
+                                Color.fromARGB(255, 32, 28, 233),
+                                Color.fromARGB(255, 47, 225, 248),
+                              ]),
                         ),
-                        onPressed: () {
-                          setState(() {
-                            RegisterProvider.registerTeacher(widget.user.name, widget.user.last_name, widget.user.email, widget.user.token)
-                                .then((value) {
-                                  if(value){
-                                    Navigator.push(context, MaterialPageRoute(
-                                        builder: (context) => LoginView()));
-                                  }
+                        child: TextButton(
+                          style: ButtonStyle(
+                            foregroundColor:
+                                MaterialStateProperty.all(Colors.white),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              RegisterProvider.registerTeacher(
+                                      widget.user.name,
+                                      widget.user.last_name,
+                                      widget.user.email,
+                                      widget.user.token)
+                                  .then((value) {
+                                if (value) {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => LoginView()));
+                                }
+                              });
                             });
-                          });
-                        },
-                        child: Text("TEACHER"),
+                          },
+                          child: Text("TEACHER",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 20)),
+                        ),
                       ),
-                      TextButton(
-                        style: ButtonStyle(
-                          backgroundColor:
-                          MaterialStateProperty.all(Colors.black),
-                          foregroundColor:
-                          MaterialStateProperty.all(Colors.white),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        width: double.maxFinite,
+                        height: 80,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          gradient: LinearGradient(
+                              begin: Alignment.bottomLeft,
+                              end: Alignment.bottomRight,
+                              colors: [
+                                Color.fromARGB(255, 156, 0, 34),
+                                Color.fromARGB(255, 153, 0, 255),
+                              ]),
                         ),
-                        onPressed: () {
-                          setState(() {
-                            RegisterProvider.registerStudent(widget.user.name, widget.user.last_name, widget.user.email, widget.user.token)
-                                .then((value) {
-                              if(value){
-                                Navigator.push(context, MaterialPageRoute(
-                                    builder: (context) => LoginView()));
-                              }
-                            });
-                          });
-                        },
-                        child: Text("STUDENT"),
+                        child: SizedBox(
+                          height: 80,
+                          width: double.maxFinite,
+                          child: TextButton(
+                            style: ButtonStyle(
+                              foregroundColor:
+                                  MaterialStateProperty.all(Colors.white),
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                RegisterProvider.registerStudent(
+                                        widget.user.name,
+                                        widget.user.last_name,
+                                        widget.user.email,
+                                        widget.user.token)
+                                    .then((value) {
+                                  if (value) {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => LoginView()));
+                                  }
+                                });
+                              });
+                            },
+                            child: Text("STUDENT",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 20)),
+                          ),
+                        ),
                       ),
                       /*ButtonColorCustomWidget(
                         customColor1: Color.fromARGB(255, 25, 0, 255),

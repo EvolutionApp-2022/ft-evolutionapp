@@ -93,27 +93,30 @@ class _SigninViewState extends State<SigninView> {
                       const SizedBox(
                         height: 10,
                       ),
-                      TextButton(
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.black),
-                          foregroundColor:
-                              MaterialStateProperty.all(Colors.white),
+                      SizedBox(
+                        width: double.maxFinite,
+                        child: TextButton(
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.black),
+                            foregroundColor:
+                                MaterialStateProperty.all(Colors.white),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => UserView(User(
+                                          id: 0,
+                                          name: name.text,
+                                          last_name: last_name.text,
+                                          email: email.text,
+                                          token: password.text))));
+                            });
+                          },
+                          child: Text("Continue"),
                         ),
-                        onPressed: () {
-                          setState(() {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => UserView(User(
-                                        id: 0,
-                                        name: name.text,
-                                        last_name: last_name.text,
-                                        email: email.text,
-                                        token: password.text))));
-                          });
-                        },
-                        child: Text("Continue"),
                       ),
                     ],
                   )),
