@@ -1,3 +1,7 @@
+export 'package:ft_evolution_app/Announcement/announcement_student_view.dart';
+
+export 'package:ft_evolution_app/Courses/couse_detail_student_view.dart';
+
 export 'package:ft_evolution_app/Dashboard/dashboard_view.dart';
 export 'package:ft_evolution_app/Courses/couse_detail_view.dart';
 export 'package:ft_evolution_app/Courses/courses_view.dart';

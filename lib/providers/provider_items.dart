@@ -4,8 +4,8 @@ import 'dart:convert';
 
 class ItemsProvider {
   static Future<List<Item>> getAllItems(int courseId) async {
-    final response = await http.get(
-        Uri.parse("http://10.0.2.2:8080/api/v1/courses/${courseId}/items"));
+    final response = await http.get(Uri.parse(
+        "http://ec2-3-92-202-108.compute-1.amazonaws.com:8080/api/v1/courses/${courseId}/items"));
 
     if (response.statusCode == 200) {
       final responseJSON = json.decode(response.body);

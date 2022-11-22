@@ -12,13 +12,12 @@ class ProfileStudentView extends StatefulWidget {
 }
 
 class _ProfileStudentViewState extends State<ProfileStudentView> {
-
   final storage = new FlutterSecureStorage();
 
-  Student student = Student(id: 0, name: "name", last_name: "last_name", email: "email", point: 0);
+  Student student = Student(
+      id: 0, name: "name", last_name: "last_name", email: "email", point: 0);
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -52,18 +51,18 @@ class _ProfileStudentViewState extends State<ProfileStudentView> {
           child: Column(
             children: [
               TextButton(
-                onPressed: () {
+                  onPressed: () {
                     setState(() {
                       storage.read(key: "idUser").then((value) =>
-                        AuthProvider.getStudentById(int.parse(value.toString())).then((value) => student = value)
-                      );
-                  });
-                },
-                child: Text("eee",
-                  style: TextStyle(color: Colors.white),
-                )
-              ),
-
+                          AuthProvider.getStudentById(
+                                  int.parse(value.toString()))
+                              .then((value) => student = value));
+                    });
+                  },
+                  child: Text(
+                    "eee",
+                    style: TextStyle(color: Colors.white),
+                  )),
               Container(
                 child: Image(
                   image: AssetImage('assets/img/profile_f.png'),
@@ -173,49 +172,6 @@ class _ProfileStudentViewState extends State<ProfileStudentView> {
               SizedBox(
                 height: 20,
               ),
-
-              /*Container(
-                height: 65,
-                margin: EdgeInsets.only(
-                    bottom: 10,
-                    //top: 10,
-                    left: 20,
-                    right: 20
-                ),
-                padding: EdgeInsets.only(
-                  left: 20,
-                  right: 20,
-                  bottom: 20,
-                  top: 10,
-                ),
-                child: Row(
-                  children: [
-                    Expanded(
-                      //TODO: Aquí utilizar un widget
-                      child: Text('Log out',
-                        style: TextStyle(
-                            fontSize: 28,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ],
-                ),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: Alignment.bottomLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        Color.fromRGBO(0, 0, 0, 0.8),
-                        Color.fromRGBO(0, 0, 0, 0.8)
-                      ]
-                  ),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-              ),
-              */
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
