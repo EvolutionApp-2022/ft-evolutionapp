@@ -7,7 +7,7 @@ class AnnouncementsProvider {
     final response =
         // await http.get(Uri.parse("https://app-bk-evolutionapp-develop-221109111646.azurewebsites.net/api/v1/sections/${sectionId}/announcements"));
         await http.get(Uri.parse(
-            "http://ec2-3-92-202-108.compute-1.amazonaws.com:8080/api/v1/sections/${sectionId}/announcements"));
+            "http://ec2-35-175-138-230.compute-1.amazonaws.com:8090/api/v1/sections/${sectionId}/announcements"));
 
     if (response.statusCode == 200) {
       final responseJSON = json.decode(response.body);
@@ -22,7 +22,7 @@ class AnnouncementsProvider {
       int sectionId, String title, String description) async {
     final response = await http.post(
         Uri.parse(
-            "http://ec2-3-92-202-108.compute-1.amazonaws.com:8080/api/v1/sections/${sectionId}/announcements"),
+            "http://ec2-35-175-138-230.compute-1.amazonaws.com:8090/api/v1/sections/${sectionId}/announcements"),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },

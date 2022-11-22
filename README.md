@@ -32,3 +32,4 @@ Execute the following command
 * version 1.0.1 - 26/10/2022
 * version 1.1.0 - 09/11/2022
 * version 1.2.0 - 22/11/2022
+* version 1.2.1 - 22/11/2022

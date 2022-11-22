@@ -5,7 +5,7 @@ class RegisterProvider {
   static Future<bool> registerTeacher(
       String name, String last_name, String email, String password) async {
     final urlTeacher = Uri.parse(
-        "http://ec2-3-92-202-108.compute-1.amazonaws.com:8080/api/v1/teachers/auth/sign-up");
+        "http://ec2-35-175-138-230.compute-1.amazonaws.com:8090/api/v1/teachers/auth/sign-up");
 
     final responseStudent = await http.post(urlTeacher,
         headers: <String, String>{
@@ -25,7 +25,7 @@ class RegisterProvider {
   static Future<bool> registerStudent(
       String name, String last_name, String email, String password) async {
     final urlStudent = Uri.parse(
-        "http://ec2-3-92-202-108.compute-1.amazonaws.com:8080/api/v1/students/auth/sign-up");
+        "http://ec2-35-175-138-230.compute-1.amazonaws.com:8090/api/v1/students/auth/sign-up");
 
     final responseStudent = await http.post(urlStudent,
         headers: <String, String>{
